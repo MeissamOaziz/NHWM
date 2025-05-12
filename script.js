@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Placeholder for logo URL - Replace with actual URL from the attached document
-    const logoUrl = 'NH-logo.png';
+    const logoUrl = 'path/to/your/logo.png';
     const logoImg = document.getElementById('logo-img');
     if (logoImg) {
         logoImg.src = logoUrl;
