@@ -184,8 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
         questionItems.forEach(item => { questionObserver.observe(item); });
     }
 
-    // The span with id="current-year" will be populated by the translation for 'footerRights'
-    // as the year is part of that translation string.
+    // The span with id="current-year" is part of the 'footerRights' translated string.
+    // If you need the year to be dynamically updated independently of full string replacement,
+    // you could set its content here, but the applyTranslations function will overwrite it
+    // if the parent <p> has data-translate-key="footerRights".
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan && !(yearSpan.closest('p')?.dataset.translateKey === 'footerRights')) {
+        // Only update if not part of a translated string that includes the year already
+        // yearSpan.textContent = new Date().getFullYear(); // This line is likely redundant with current setup
+    }
+
 
     const sections = document.querySelectorAll('main section[id]');
     const mainNavLinksQuery = document.querySelectorAll('.main-nav a');
@@ -219,18 +227,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // For translated alerts, you would define these keys in your translations object:
-            // e.g., formAlertSuccess: "Thank you, {name}! Your message has been sent."
-            // e.g., formAlertError: "Please complete all required fields."
-            const successAlertKey = "formAlertSuccess";
-            const errorAlertKey = "formAlertError";
+            const successAlertKey = "formAlertSuccess"; 
+            const errorAlertKey = "formAlertError";     
             const defaultSuccessAlert = `Thank you for your message, ${name}! (This is a demo - no data was sent)`;
             const defaultErrorAlert = 'Please fill in all required fields.';
 
             if (name && email && message) {
                 let alertMessage = defaultSuccessAlert;
                 if (translations[currentLang] && translations[currentLang][successAlertKey]) {
-                    alertMessage = translations[currentLang][successAlertKey].replace('{name}', name); // Simple placeholder
+                    alertMessage = translations[currentLang][successAlertKey].replace('{name}', name); 
                 }
                 alert(alertMessage);
                 contactForm.reset();
