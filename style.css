@@ -289,7 +289,7 @@ section:nth-child(even) {
 /* --- Features Section --- */
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     text-align: center;
 }
@@ -300,9 +300,9 @@ section:nth-child(even) {
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 .feature-item:hover {
     transform: translateY(-5px);
@@ -319,19 +319,20 @@ section:nth-child(even) {
     margin-bottom: 10px;
 }
 .feature-item p {
-    font-size: 0.95rem;
-    flex-grow: 1;
+    font-size: 0.95rem; 
+    flex-grow: 1; 
 }
 
+
 /* --- About Section --- */
-.about-section > .container > p { /* General paragraphs directly under .container in .about-section */
+.about-section > .container > p { 
     font-size: 1.05rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
-.about-section h2 { /* Section title */
+.about-section h2 { 
     margin-bottom: 1em;
 }
 
@@ -344,19 +345,18 @@ section:nth-child(even) {
     overflow: hidden;
     background-color: var(--bg-light);
     display: flex;
-    flex-direction: row; /* Image on left, text on right by default due to HTML order */
-    align-items: flex-start; /* Align items to the start of the cross axis */
+    flex-direction: row; 
+    align-items: flex-start; 
     gap: 30px;
 }
 
 .team-member-photo {
     width: auto;
-    max-width: 200px; /* Control image size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rectangular with rounded corners */
-    object-fit: contain; /* Show entire image, maintain aspect ratio */
-    /* border: 3px solid var(--primary-light-blue); */ /* Optional border for photo */
-    flex-shrink: 0; /* Prevent image from shrinking if text is long */
+    max-width: 200px; 
+    height: auto; 
+    border-radius: 8px; 
+    object-fit: contain; 
+    flex-shrink: 0; 
 }
 
 .team-member-profile-text {
@@ -364,18 +364,17 @@ section:nth-child(even) {
     text-align: left;
 }
 
-.team-member-profile-text h3 { /* Imran's name */
+.team-member-profile-text h3 { 
     color: var(--primary-dark-blue);
     font-size: 1.8rem;
     margin-bottom: 15px;
     text-align: left;
 }
 
-.team-member-profile-text p { /* Imran's description paragraphs */
+.team-member-profile-text p { 
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 1em;
-    /* max-width: none; */ /* Let flexbox handle width */
 }
 
 /* --- Services Section --- */
@@ -494,7 +493,7 @@ section:nth-child(even) {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Increased */
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
@@ -513,24 +512,24 @@ section:nth-child(even) {
 
 .footer-partner-logo {
     height: 45px; /* Increased */
-    max-width: none; /* Allow natural width based on height */
+    max-width: none;
     width: auto;
 }
 
 .footer-regulatory-logo {
-    margin-top: 20px;
+    margin-top: 20px; /* Increased */
 }
 
 .footer-ciro-logo {
-    max-height: none; /* Removed max-height for full width */
+    max-height: none;
     width: 100%; /* Full width */
-    display: block; /* Ensure it takes its own line */
-    padding: 0 10px; /* Add some padding so it doesn't touch edges on full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    display: block;
+    padding: 0 10px; 
+    box-sizing: border-box; 
 }
 
 .site-footer-bottom p {
-    margin: 10px 0;
+    margin: 10px 0; /* Increased */
     font-size: 0.9rem;
     opacity: 0.8;
 }
@@ -572,21 +571,21 @@ section:nth-child(even) {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     .team-member-profile {
-        flex-direction: column; /* Stack image and text on smaller screens */
-        align-items: center; /* Center items when stacked */
+        flex-direction: column; 
+        align-items: center; 
     }
     .team-member-photo {
-        margin-bottom: 20px; /* Add margin back when stacked */
-        max-width: 150px; /* Can adjust for stacked view */
+        margin-bottom: 20px; 
+        max-width: 150px; 
     }
     .team-member-profile-text {
-        text-align: center; /* Center text when stacked */
-    }
-    .team-member-profile-text h3, .team-member-profile-text p {
-        text-align: left; /* Keep paragraph text left aligned */
+        text-align: center; 
     }
     .team-member-profile-text h3 {
-        text-align: center; /* Name can be centered */
+        text-align: center; 
+    }
+    .team-member-profile-text p {
+      text-align: left; /* Keep paragraphs left-aligned for readability */
     }
 }
 
@@ -620,8 +619,7 @@ section:nth-child(even) {
         padding: 20px;
     }
     .team-member-photo {
-        width: 120px; /* Adjust if too big when stacked */
-        /* height: 120px; */ /* Let height be auto to maintain aspect ratio */
+        width: 120px; 
     }
 
     #contact-form {
@@ -634,8 +632,5 @@ section:nth-child(even) {
     }
     .footer-nh-logo, .footer-partner-logo {
         height: 30px;
-    }
-    .footer-ciro-logo {
-        /* width: 90%; */ /* Example if 100% is too much on very small screens, but 100% is okay with padding */
     }
 }
