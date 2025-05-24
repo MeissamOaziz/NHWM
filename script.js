@@ -184,14 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         questionItems.forEach(item => { questionObserver.observe(item); });
     }
 
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-      // The 'footerRights' translation key will populate the parent <p> tag, including the year.
-      // The span with id="current-year" will display the number from the translated string.
-      // If you need just the number to be dynamic and separate from translation, you might need to adjust.
-      // For instance, `footerRights: "© {year} Company Name. All rights reserved."` and replace {year} in JS.
-      // Current setup uses the year from `new Date().getFullYear()` directly in the translation string.
-    }
+    // The span with id="current-year" will be populated by the translation for 'footerRights'
+    // as the year is part of that translation string.
 
     const sections = document.querySelectorAll('main section[id]');
     const mainNavLinksQuery = document.querySelectorAll('.main-nav a');
@@ -225,7 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // Add these keys to your translations object for translated alerts
+            // For translated alerts, you would define these keys in your translations object:
+            // e.g., formAlertSuccess: "Thank you, {name}! Your message has been sent."
+            // e.g., formAlertError: "Please complete all required fields."
             const successAlertKey = "formAlertSuccess";
             const errorAlertKey = "formAlertError";
             const defaultSuccessAlert = `Thank you for your message, ${name}! (This is a demo - no data was sent)`;
@@ -234,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (name && email && message) {
                 let alertMessage = defaultSuccessAlert;
                 if (translations[currentLang] && translations[currentLang][successAlertKey]) {
-                    alertMessage = translations[currentLang][successAlertKey].replace('{name}', name);
+                    alertMessage = translations[currentLang][successAlertKey].replace('{name}', name); // Simple placeholder
                 }
                 alert(alertMessage);
                 contactForm.reset();
