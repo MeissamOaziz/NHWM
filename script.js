@@ -184,14 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
         questionItems.forEach(item => { questionObserver.observe(item); });
     }
 
-    // The span with id="current-year" is part of the 'footerRights' translated string.
-    // If you need the year to be dynamically updated independently of full string replacement,
-    // you could set its content here, but the applyTranslations function will overwrite it
-    // if the parent <p> has data-translate-key="footerRights".
     const yearSpan = document.getElementById('current-year');
-    if (yearSpan && !(yearSpan.closest('p')?.dataset.translateKey === 'footerRights')) {
-        // Only update if not part of a translated string that includes the year already
-        // yearSpan.textContent = new Date().getFullYear(); // This line is likely redundant with current setup
+    if (yearSpan) {
+      // This span is part of the `footerRights` translated string.
+      // The translation itself contains the dynamic year.
     }
 
 
@@ -236,6 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let alertMessage = defaultSuccessAlert;
                 if (translations[currentLang] && translations[currentLang][successAlertKey]) {
                     alertMessage = translations[currentLang][successAlertKey].replace('{name}', name); 
+                } else if (translations[currentLang] && translations[currentLang].heroCTA) { // Fallback for demo
+                     alertMessage = translations[currentLang].heroCTA; 
                 }
                 alert(alertMessage);
                 contactForm.reset();
