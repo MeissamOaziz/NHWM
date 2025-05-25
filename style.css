@@ -85,14 +85,9 @@ img {
     align-items: center;
 }
 
-/* Removed .logo-area as it's no longer needed for a single logo */
-
-.site-header .logo img { /* NH Logo */
+.site-header .logo img { 
     height: 45px; 
 }
-
-/* Removed .partnership-info-header and .partner-logo-header as they are no longer in the header */
-
 
 .main-nav ul {
     list-style: none;
@@ -362,11 +357,16 @@ section:nth-child(even) {
     border-radius: 8px; 
     object-fit: contain; 
     flex-shrink: 0; 
+    margin-top: 0; /* Ensure no extra top margin */
+    margin-bottom: 0; /* Ensure no extra bottom margin */
 }
 
 .team-member-profile-text {
     flex-grow: 1;
     text-align: left;
+    display: flex; /* Added for vertical centering of text block if needed */
+    flex-direction: column; /* Added for vertical centering of text block if needed */
+    justify-content: center; /* Added for vertical centering of text block if needed */
 }
 
 .team-member-profile-text h3 { 
@@ -561,7 +561,6 @@ section:nth-child(even) {
         flex-direction: column; 
         gap: 15px;
     }
-    /* .logo-area adjustment no longer needed as it was removed */
     .main-nav ul {
         justify-content: center; 
     }
