@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: "Send Message",
             footerPartnership: "In partnership with",
             footerRights: `© ${new Date().getFullYear()} New Horizons Wealth Management. All rights reserved.`,
-            footerLocations: "Montreal | Toronto"
+            footerLocations: "Ontario, Québec, Alberta" // UPDATED
         },
         fr: {
             pageTitle: "Gestion de Patrimoine Nouveaux Horizons - Amélioré",
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: "Envoyer le Message",
             footerPartnership: "En partenariat avec",
             footerRights: `© ${new Date().getFullYear()} Gestion de Patrimoine Nouveaux Horizons. Tous droits réservés.`,
-            footerLocations: "Montréal | Toronto"
+            footerLocations: "Ontario, Québec, Alberta" // UPDATED
         }
     };
 
@@ -185,9 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-      // This span is part of the `footerRights` translated string.
-      // The translation itself contains the dynamic year.
+    if (yearSpan && !(yearSpan.closest('p')?.dataset.translateKey === 'footerRights')) {
+        // This is mostly redundant now as the year is part of the translated footerRights string.
     }
 
 
@@ -232,8 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let alertMessage = defaultSuccessAlert;
                 if (translations[currentLang] && translations[currentLang][successAlertKey]) {
                     alertMessage = translations[currentLang][successAlertKey].replace('{name}', name); 
-                } else if (translations[currentLang] && translations[currentLang].heroCTA) { // Fallback for demo
-                     alertMessage = translations[currentLang].heroCTA; 
                 }
                 alert(alertMessage);
                 contactForm.reset();
