@@ -70,7 +70,7 @@ img {
 .site-header {
     background-color: var(--bg-light);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 10px 0; /* Adjusted padding for header height */
+    padding: 10px 0; 
     position: sticky;
     top: 0;
     left: 0;
@@ -85,33 +85,13 @@ img {
     align-items: center;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between NH logo and partnership info */
-}
+/* Removed .logo-area as it's no longer needed for a single logo */
 
 .site-header .logo img { /* NH Logo */
-    height: 45px; /* Adjusted height */
+    height: 45px; 
 }
 
-.partnership-info-header {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between "in partnership with" and partner logo */
-}
-
-.partnership-text-header {
-    font-size: 0.75rem; /* Smaller text for header partnership */
-    color: var(--text-dark);
-    opacity: 0.8;
-    margin: 0; 
-}
-
-.partner-logo-header { /* DesignSecurities Logo in header */
-    height: 28px; /* Adjusted height */
-    width: auto;
-}
+/* Removed .partnership-info-header and .partner-logo-header as they are no longer in the header */
 
 
 .main-nav ul {
@@ -172,7 +152,7 @@ img {
     text-align: left;
     display: flex;
     align-items: center;
-    min-height: calc(80vh - 65px); /* Adjusted for potentially smaller header */
+    min-height: calc(80vh - 65px); 
 }
 
 .hero-content-container {
@@ -371,7 +351,7 @@ section:nth-child(even) {
     background-color: var(--bg-light);
     display: flex;
     flex-direction: row; 
-    align-items: flex-start; /* Align top of image with top of text block */
+    align-items: center; /* Vertically center image and text block relative to each other */
     gap: 30px;
 }
 
@@ -382,7 +362,6 @@ section:nth-child(even) {
     border-radius: 8px; 
     object-fit: contain; 
     flex-shrink: 0; 
-    /* margin-top: 0; Removed to align with top of text block */
 }
 
 .team-member-profile-text {
@@ -529,14 +508,14 @@ section:nth-child(even) {
     width: auto;
 }
 
-.partnership-text { /* This class is for the footer partnership text */
+.partnership-text { 
     font-size: 1rem; 
     color: var(--text-light);
     opacity: 0.9;
     margin: 0;
 }
 
-.footer-partner-logo { /* DesignSecurities Logo in footer */
+.footer-partner-logo { 
     height: 45px; 
     max-width: none;
     width: auto;
@@ -547,12 +526,12 @@ section:nth-child(even) {
 }
 
 .footer-ciro-logo {
-    max-height: 25px; /* Halved height for better proportion */
+    max-height: 25px; /* Adjusted height */
     width: 100%; 
     display: block;
     padding: 0 10px; 
     box-sizing: border-box; 
-    object-fit: contain; /* Ensures the image scales down correctly if it's intrinsically tall */
+    object-fit: contain; 
 }
 
 .site-footer-bottom p {
@@ -576,21 +555,15 @@ section:nth-child(even) {
 
 @media (max-width: 992px) {
     .site-header {
-        padding: 15px 0; /* Restore some padding if header content wraps */
+        padding: 15px 0; 
     }
     .header-container {
-        flex-direction: column; /* Stack logo area and nav */
+        flex-direction: column; 
         gap: 15px;
     }
-    .logo-area {
-        flex-direction: column; /* Stack NH logo and partnership info */
-        gap: 8px;
-    }
-    .partnership-info-header {
-        justify-content: center; /* Center partnership info when stacked */
-    }
+    /* .logo-area adjustment no longer needed as it was removed */
     .main-nav ul {
-        justify-content: center; /* Center nav items */
+        justify-content: center; 
     }
 
     .hero-section {
@@ -638,9 +611,6 @@ section:nth-child(even) {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
-
-    /* Header stacking is already handled by 992px media query if that's sufficient */
-    /* .header-container, .logo-area might need further adjustments if they still break */
     
     .main-nav ul {
       flex-wrap: wrap;
