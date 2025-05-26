@@ -141,48 +141,70 @@ img {
 
 /* --- Hero Section --- */
 .hero-section {
-    background-color: var(--primary-dark-blue);
+    /* background-color: var(--primary-dark-blue); REMOVED for video background */
     color: var(--text-light);
-    padding: 60px 0;
+    padding: 60px 0; /* Keep padding for content spacing */
     text-align: left;
-    display: flex;
-    align-items: center;
+    display: flex; /* Keep for vertical alignment of content container if needed */
+    align-items: center; /* Keep for vertical alignment of content container */
     min-height: calc(80vh - 65px); 
+    position: relative; /* Crucial for positioning video and overlay */
+    overflow: hidden; /* Hide parts of video that extend beyond section */
 }
 
-.hero-content-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind overlay and content */
+    pointer-events: none; /* Prevent interaction with the video */
+}
+
+.video-background-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw; /* Ensure it's wide enough */
+    height: 56.25vw; /* 16:9 aspect ratio (100/56.25 = 1.777) */
+    min-width: 177.77vh; /* 16:9 aspect ratio for height based covering (100 * 16/9) */
+    min-height: 100vh; /* Ensure it's tall enough */
+    transform: translate(-50%, -50%);
+    /* Fallback if above doesn't perfectly cover, ensure it covers the section */
+    /* A simpler cover might be: */
+    /* width: 100%; height: 100%; object-fit: cover; but object-fit is tricky for iframes */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 58, 109, 0.7); /* Dark blue overlay, adjust color and opacity (e.g., var(--primary-dark-blue) with alpha) */
+    z-index: 2; /* On top of video, behind content */
+}
+
+.hero-content-container { /* Ensure this container and its content are on top */
+    display: flex; /* Re-affirm flex if it was there for centering text block */
+    align-items: center; /* Re-affirm */
+    width: 100%; /* Take full width within padding */
+    position: relative; /* To ensure it's above the overlay */
+    z-index: 3; /* Above video and overlay */
 }
 
 .hero-text {
-    flex: 1 1 55%;
-    max-width: 55%;
+    flex: 1 1 100%; /* Allow text to take full width or adjust as before */
+    max-width: 700px; /* Example max-width for readability */
+    margin: 0 auto; /* Center the text block if it's narrower than container */
+    text-align: center; /* Center text content */
     animation: fadeInText 1s ease-out forwards;
-}
-
-.hero-visual {
-    flex: 1 1 45%;
-    max-width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInVisual 1s ease-out 0.5s forwards;
-}
-
-.hero-visual iframe {
-    width: 100%;
-    max-width: 560px;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    border: 3px solid var(--primary-light-blue);
+    /* Removed .hero-visual as it's replaced by the full background */
 }
 
 .hero-section h1 {
-    color: var(--text-light);
+    color: var(--text-light); /* Stays light */
     font-weight: 700;
     margin-bottom: 0.5em;
 }
@@ -190,18 +212,15 @@ img {
 .hero-section p {
     font-size: 1.15rem;
     margin-bottom: 1.5em;
-    opacity: 0.9;
+    opacity: 0.9;  /* Stays light */
 }
 
 @keyframes fadeInText {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: translateY(20px); } /* Changed from translateX */
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInVisual {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
+/* Remove @keyframes fadeInVisual as .hero-visual is gone */
 
 .cta-button {
     display: inline-block;
@@ -230,7 +249,7 @@ section {
     padding: 60px 0;
 }
 section#hero {
-    padding: 60px 0;
+    padding: 60px 0; /* Keep this for internal content spacing */
 }
 section:nth-child(even) {
     background-color: var(--bg-medium);
@@ -346,7 +365,7 @@ section:nth-child(even) {
     background-color: var(--bg-light);
     display: flex;
     flex-direction: row; 
-    align-items: center; /* Vertically center image and text block relative to each other */
+    align-items: center; 
     gap: 30px;
 }
 
@@ -357,16 +376,16 @@ section:nth-child(even) {
     border-radius: 8px; 
     object-fit: contain; 
     flex-shrink: 0; 
-    margin-top: 0; /* Ensure no extra top margin */
-    margin-bottom: 0; /* Ensure no extra bottom margin */
+    margin-top: 0; 
+    margin-bottom: 0; 
 }
 
 .team-member-profile-text {
     flex-grow: 1;
     text-align: left;
-    display: flex; /* Added for vertical centering of text block if needed */
-    flex-direction: column; /* Added for vertical centering of text block if needed */
-    justify-content: center; /* Added for vertical centering of text block if needed */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
 }
 
 .team-member-profile-text h3 { 
@@ -526,7 +545,7 @@ section:nth-child(even) {
 }
 
 .footer-ciro-logo {
-    max-height: 25px; /* Adjusted height */
+    max-height: 25px; 
     width: 100%; 
     display: block;
     padding: 0 10px; 
@@ -566,24 +585,20 @@ section:nth-child(even) {
     }
 
     .hero-section {
-        min-height: auto;
-        padding: 40px 0;
+        min-height: auto; /* Allow height to adjust to content + video */
+        padding: 80px 0; /* Increase padding for more vertical space if needed */
     }
     .hero-content-container {
-        flex-direction: column;
+        /* flex-direction: column; *//* Already set in original responsive, keep */
         text-align: center;
     }
-    .hero-text, .hero-visual {
-        max-width: 100%;
-        flex-basis: auto;
-    }
     .hero-text {
-        margin-bottom: 30px;
-        order: 2;
+        max-width: 90%; /* Allow text to be wider on smaller screens */
+        /* margin-bottom: 30px; *//* Already set in original responsive, keep */
+        /* order: 2; *//* Already set in original responsive, keep */
     }
-    .hero-visual {
-        order: 1;
-    }
+    /* .hero-visual is removed */
+    
     .feature-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
