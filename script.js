@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Translations Object ---
     const translations = {
         en: {
-            pageTitle: "New Horizons Wealth Management - Enhanced",
+            pageTitle: "New Horizons Wealth Management",
             navAbout: "About Us",
             navServices: "Services",
             navFeatures: "Features",
@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             numbersClients: "Happy Clients",
             featuresTitle: "Empowering Your Financial Journey",
             feature1Title: "Holistic Financial Planning",
-            feature1Desc: "Through close partnership and full transparency, we align every aspect of your wealth strategy to support your long-term goals. From investments to insurance, estate planning to tax strategies, everything works together seamlessly for a clearer, more confident financial future.",
+            feature1Desc: "Through close partnership and full transparency, we align every aspect of your wealth strategy to support your long-term goals. From investments to insurance, estate planning to tax strategies, everything works together seamlessly.",
             feature2Title: "Quarterly Touchpoints",
             feature2Desc: "Your dedicated advisor will touch base with you as frequently as you want to monitor and make strategic changes.",
             feature3Title: "Strategic Investment Guidance",
             feature3Desc: "Benefit from expert advice and strategic changes tailored to your financial goals and market conditions for optimal growth and security.",
             feature4Title: "Insurance Planning",
-            feature4Desc: "As part of our holistic approach, we incorporate insurance planning to help protect your wealth and secure your financial future. From life and disability coverage to long-term care solutions, we ensure your risk management strategy supports your overall financial goals.",
+            feature4Desc: "As part of our holistic approach, we incorporate insurance planning to help protect your wealth and secure your financial future.",
             testimonialsTitle: "What People Say",
-            testimonial1Quote: `"Working with New Horizons has been a game-changer for my financial future. Their personalized approach and expert guidance have given me peace of mind knowing my investments are in good hands."`,
+            testimonial1Quote: `"Working with New Horizons has been a game-changer for my financial future. Their personalized approach and expert guidance have given me peace of mind."`,
             testimonial1Author: "- Sarah M.",
             testimonial2Quote: `"I appreciate the transparency and regular communication from their team. They truly understand my goals and have helped me achieve significant financial growth."`,
             testimonial2Author: "- John B.",
@@ -63,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLocations: "Ontario, Québec, Alberta" 
         },
         fr: {
-            pageTitle: "Gestion de Patrimoine Nouveaux Horizons - Amélioré",
-            navAbout: "À Propos de Nous",
+            // ... (All French translations would go here, similar to the last version) ...
+            pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
+            navAbout: "À Propos",
             navServices: "Services",
             navFeatures: "Nos Atouts",
             navTestimonials: "Témoignages",
@@ -83,22 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
             numbersClients: "Clients Satisfaits",
             featuresTitle: "Optimiser Votre Parcours Financier",
             feature1Title: "Planification Financière Globale",
-            feature1Desc: "Grâce à un partenariat étroit et une transparence totale, nous alignons chaque aspect de votre stratégie patrimoniale pour soutenir vos objectifs à long terme. Des investissements à l'assurance, de la planification successorale aux stratégies fiscales, tout fonctionne ensemble de manière transparente pour un avenir financier plus clair et plus confiant.",
+            feature1Desc: "Grâce à un partenariat étroit et une transparence totale, nous alignons chaque aspect de votre stratégie patrimoniale pour soutenir vos objectifs à long terme. Des investissements à l'assurance, de la planification successorale aux stratégies fiscales, tout fonctionne ensemble de manière transparente.",
             feature2Title: "Points de Contact Trimestriels",
             feature2Desc: "Votre conseiller dédié communiquera avec vous aussi fréquemment que vous le désirez pour effectuer le suivi et apporter des ajustements stratégiques.",
             feature3Title: "Conseils Stratégiques en Placements",
             feature3Desc: "Bénéficiez de conseils d'experts et d'ajustements stratégiques adaptés à vos objectifs financiers et aux conditions du marché pour une croissance et une sécurité optimales.",
             feature4Title: "Planification d'Assurance",
-            feature4Desc: "Dans le cadre de notre approche globale, nous intégrons la planification d'assurance pour aider à protéger votre patrimoine et sécuriser votre avenir financier. De la couverture vie et invalidité aux solutions de soins de longue durée, nous veillons à ce que votre stratégie de gestion des risques soutienne vos objectifs financiers globaux.",
+            feature4Desc: "Dans le cadre de notre approche globale, nous intégrons la planification d'assurance pour aider à protéger votre patrimoine et sécuriser votre avenir financier.",
             testimonialsTitle: "Ce Que Les Gens Disent",
-            testimonial1Quote: `"Travailler avec Nouveaux Horizons a changé la donne pour mon avenir financier. Leur approche personnalisée et leurs conseils d'experts m'ont apporté une tranquillité d'esprit, sachant que mes investissements sont entre de bonnes mains."`,
+            testimonial1Quote: `"Travailler avec Nouveaux Horizons a changé la donne pour mon avenir financier. Leur approche personnalisée et leurs conseils d'experts m'ont apporté une tranquillité d'esprit."`,
             testimonial1Author: "- Sarah M.",
             testimonial2Quote: `"J'apprécie la transparence et la communication régulière de leur équipe. Ils comprennent vraiment mes objectifs et m'ont aidé à réaliser une croissance financière significative."`,
             testimonial2Author: "- John B.",
             testimonial3Quote: `"Nouveaux Horizons a fourni des conseils sur mesure qui correspondaient parfaitement à mes besoins en matière de planification de la retraite. Je me sens beaucoup plus en sécurité pour mon avenir grâce à leur expertise."`,
             testimonial3Author: "- Emily K.",
             triggerQuestionsTitle: "Vous Posez-Vous Ces Questions?",
-            q1: "Vous travaillez fort pour votre argent, mais n'avez pas encore découvert comment votre argent peut travailler pour vous?",
+            q1: "Vous travaillez dur pour votre argent, mais n'avez pas encore découvert comment votre argent peut travailler pour vous?",
             q2: "Sentez-vous que vous n'avez pas le plein contrôle de vos investissements?",
             q3: "Êtes-vous préoccupé(e) par le taux de croissance de votre épargne?",
             q4: "Manquez-vous de temps ou d'expertise pour naviguer les complexités du marché financier?",
@@ -136,24 +137,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (translations[lang] && translations[lang][key]) {
                 if (element.tagName === 'TITLE') {
                     element.textContent = translations[lang][key];
-                } else if (element.hasAttribute('value') && (element.tagName === 'INPUT' || element.tagName === 'BUTTON')) {
-                    element.value = translations[lang][key];
-                } else if (element.hasAttribute('placeholder')) {
-                    element.placeholder = translations[lang][key];
-                }
-                else {
+                } else {
                     element.textContent = translations[lang][key];
                 }
             }
         });
 
-        if (enBtn && frBtn) {
-            if (lang === 'en') {
-                enBtn.classList.add('active');
-                frBtn.classList.remove('active');
-            } else {
-                frBtn.classList.add('active');
-                enBtn.classList.remove('active');
+        const questionsContainer = document.getElementById('questions-container');
+        if(questionsContainer) {
+            questionsContainer.innerHTML = '';
+            for(let i = 1; i <= 6; i++) {
+                const p = document.createElement('p');
+                p.className = 'question animate-question';
+                p.dataset.sentences = translations[lang][`q${i}`] || '';
+                questionsContainer.appendChild(p);
             }
         }
     }
@@ -172,21 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const navLinks = document.querySelectorAll('.main-nav a[href^="#"], .cta-button[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = document.querySelector('.site-header') ? document.querySelector('.site-header').offsetHeight : 0;
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset - 15;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-        });
-    });
-
+    // --- General Scroll Animation ---
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     if (animatedElements.length > 0) {
         const observerOptions = {
@@ -194,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
             rootMargin: '0px 0px -100px 0px',
             threshold: 0.1
         };
-
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -203,33 +185,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         };
-
         const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
-        animatedElements.forEach(el => {
-            animationObserver.observe(el);
-        });
+        animatedElements.forEach(el => animationObserver.observe(el));
     }
-
+    
     // --- Special Animation for Questions ---
     const questionsContainer = document.getElementById('questions-container');
-    const questions = Array.from(questionsContainer.getElementsByClassName('question'));
-    
     const animateQuestion = (questionElement, callback) => {
-        const text = questionElement.getAttribute('data-sentences');
+        const text = questionElement.dataset.sentences;
+        if(!text) return;
         const words = text.split(' ');
-        questionElement.innerHTML = '';
-        questionElement.style.opacity = 1;
-
+        questionElement.innerHTML = '<i></i>';
+        const italicElement = questionElement.querySelector('i');
+        
         words.forEach((word, index) => {
             const wordSpan = document.createElement('span');
             wordSpan.textContent = word + ' ';
             wordSpan.className = 'question-word';
             wordSpan.style.transitionDelay = `${index * 0.05}s`;
-            questionElement.appendChild(wordSpan);
+            italicElement.appendChild(wordSpan);
         });
 
-        // Trigger animation
         setTimeout(() => {
+            questionElement.style.opacity = 1;
             const wordSpans = questionElement.getElementsByClassName('question-word');
             for(let span of wordSpans) {
                 span.style.opacity = 1;
@@ -237,13 +215,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 100);
 
-        // Call next animation
-        setTimeout(callback, words.length * 50 + 1000); // Wait for this animation to finish plus a pause
+        setTimeout(callback, words.length * 50 + 1000); 
     };
 
     const questionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
+                const questions = Array.from(questionsContainer.getElementsByClassName('question'));
                 let currentIndex = 0;
                 const animateNext = () => {
                     if(currentIndex < questions.length) {
@@ -254,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 };
                 animateNext();
-                observer.unobserve(entry.target); // Animate only once
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
@@ -263,52 +241,5 @@ document.addEventListener('DOMContentLoaded', () => {
         questionObserver.observe(questionsContainer);
     }
     
-    // --- Year, Scroll, Form scripts (as before) ---
-    const sections = document.querySelectorAll('main section[id]');
-    const mainNavLinksQuery = document.querySelectorAll('.main-nav a');
-    const headerHeight = document.querySelector('.site-header') ? document.querySelector('.site-header').offsetHeight : 0;
-
-    function changeNavOnScroll() {
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 20;
-            if (window.pageYOffset >= sectionTop) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        mainNavLinksQuery.forEach(link => {
-            link.classList.remove('active-link');
-            if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSection) {
-                link.classList.add('active-link');
-            }
-        });
-    }
-    if (sections.length > 0 && mainNavLinksQuery.length > 0) {
-        window.addEventListener('scroll', changeNavOnScroll);
-        changeNavOnScroll();
-    }
-
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const defaultSuccessAlert = `Thank you for your message, ${name}! (This is a demo - no data was sent)`;
-            const defaultErrorAlert = 'Please fill in all required fields.';
-
-            if (name && email && message) {
-                alert(defaultSuccessAlert);
-                contactForm.reset();
-            } else {
-                alert(defaultErrorAlert);
-            }
-        });
-    }
-
-    if (typeof applyTranslations === 'function') {
-      applyTranslations(currentLang);
-    }
+    applyTranslations(currentLang); // Initial translation
 });
