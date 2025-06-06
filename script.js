@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Translations Object ---
+    // (This object remains the same as the previous version)
     const translations = {
         en: {
             pageTitle: "New Horizons Wealth Management - Enhanced",
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: "Send Message",
             footerPartnership: "In partnership with",
             footerRights: `© ${new Date().getFullYear()} New Horizons Wealth Management. All rights reserved.`,
-            footerLocations: "Ontario, Québec, Alberta" // UPDATED
+            footerLocations: "Ontario, Québec, Alberta" 
         },
         fr: {
             pageTitle: "Gestion de Patrimoine Nouveaux Horizons - Amélioré",
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: "Envoyer le Message",
             footerPartnership: "En partenariat avec",
             footerRights: `© ${new Date().getFullYear()} Gestion de Patrimoine Nouveaux Horizons. Tous droits réservés.`,
-            footerLocations: "Ontario, Québec, Alberta" // UPDATED
+            footerLocations: "Ontario, Québec, Alberta" 
         }
     };
 
@@ -169,26 +170,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const questionItems = document.querySelectorAll('.question-item');
-    if (questionItems.length > 0) {
-        const observerOptions = { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 };
+    // UPDATED INTERSECTION OBSERVER FOR MORE ANIMATIONS
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    if (animatedElements.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
         const observerCallback = (entries, observer) => {
-            entries.forEach((entry, index) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => { entry.target.classList.add('visible'); }, index * 250);
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Animate only once
                 }
             });
         };
-        const questionObserver = new IntersectionObserver(observerCallback, observerOptions);
-        questionItems.forEach(item => { questionObserver.observe(item); });
+
+        const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
+        animatedElements.forEach(el => {
+            animationObserver.observe(el);
+        });
     }
 
     const yearSpan = document.getElementById('current-year');
     if (yearSpan && !(yearSpan.closest('p')?.dataset.translateKey === 'footerRights')) {
         // This is mostly redundant now as the year is part of the translated footerRights string.
     }
-
 
     const sections = document.querySelectorAll('main section[id]');
     const mainNavLinksQuery = document.querySelectorAll('.main-nav a');
