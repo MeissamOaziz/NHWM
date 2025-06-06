@@ -31,15 +31,9 @@
 
     <main>
         <section id="hero" class="hero-section">
-            <div class="video-background-container">
-                <video autoplay loop muted playsinline poster="poster.jpg"> {/* Optional: poster="path/to/your-poster-image.jpg" */}
-                    <source src="NHWM Video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video-overlay"></div>
+            <div class="background-overlay"></div>
             <div class="container hero-content-container"> 
-                <div class="hero-text">
+                <div class="hero-text animate-on-scroll">
                     <h1 data-translate-key="heroTitle">Wealth Management, Tailored to You</h1>
                     <p data-translate-key="heroSubtitle">At New Horizons Wealth Management, we don’t believe in one-size-fits-all solutions. Your financial situation is unique, and your wealth plan should be too. Whether you're planning for retirement, growing your investments, or securing your legacy, we design personalized strategies that align with your values and aspirations. With decades of experience and a commitment to transparency, our team gives you the confidence to focus on what matters most—knowing your financial future is in capable hands.</p>
                     <a href="#contact" class="cta-button" data-translate-key="heroCTA">Schedule a Consultation</a>
@@ -49,38 +43,38 @@
 
         <section id="trigger-questions" class="trigger-questions-section">
             <div class="container">
-                <h2><img src="icon-faq.svg" alt="FAQ Icon" class="heading-icon"><span data-translate-key="triggerQuestionsTitle">Are You Asking Yourself These Questions?</span></h2>
+                <h2 class="animate-on-scroll" data-translate-key="triggerQuestionsTitle">Are You Asking Yourself These Questions?</h2>
                 <ul class="question-list">
-                    <li class="question-item"><p data-translate-key="q1">You work hard for your money, but haven't found out how your money can work for you yet?</p></li>
-                    <li class="question-item"><p data-translate-key="q2">Do you feel like you don't have full control over your investments?</p></li>
-                    <li class="question-item"><p data-translate-key="q3">Are you concerned about whether your savings are growing at the rate they should be?</p></li>
-                    <li class="question-item"><p data-translate-key="q4">Do you lack the time or expertise to navigate the complexities of the financial market?</p></li>
-                    <li class="question-item"><p data-translate-key="q5">Are you looking for a trusted partner to guide you towards your long-term financial goals?</p></li>
-                    <li class="question-item"><p data-translate-key="q6">Is your financial advisor recommending products exclusively from their own firm, rather than considering a full range of available options in the market?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q1">You work hard for your money, but haven't found out how your money can work for you yet?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q2">Do you feel like you don't have full control over your investments?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q3">Are you concerned about whether your savings are growing at the rate they should be?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q4">Do you lack the time or expertise to navigate the complexities of the financial market?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q5">Are you looking for a trusted partner to guide you towards your long-term financial goals?</p></li>
+                    <li class="question-item animate-on-scroll"><p data-translate-key="q6">Is your financial advisor recommending products exclusively from their own firm, rather than considering a full range of available options in the market?</p></li>
                 </ul>
             </div>
         </section>
 
         <section id="features" class="features-section">
             <div class="container">
-                <h2 data-translate-key="featuresTitle">Empowering Your Financial Journey</h2>
+                <h2 class="animate-on-scroll" data-translate-key="featuresTitle">Empowering Your Financial Journey</h2>
                 <div class="feature-grid">
-                    <div class="feature-item">
+                    <div class="feature-item animate-on-scroll">
                         <img src="icon-growth.svg" alt="Holistic Financial Planning Icon" class="feature-icon">
                         <h3 data-translate-key="feature1Title">Holistic Financial Planning</h3>
                         <p data-translate-key="feature1Desc">Through close partnership and full transparency, we align every aspect of your wealth strategy to support your long-term goals. From investments to insurance, estate planning to tax strategies, everything works together seamlessly for a clearer, more confident financial future.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item animate-on-scroll">
                         <img src="icon-strategy.svg" alt="Quarterly Touchpoints Icon" class="feature-icon">
                         <h3 data-translate-key="feature2Title">Quarterly Touchpoints</h3>
                         <p data-translate-key="feature2Desc">Your dedicated advisor will touch base with you as frequently as you want to monitor and make strategic changes.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item animate-on-scroll">
                         <img src="icon-security.svg" alt="Strategic Investment Guidance Icon" class="feature-icon">
                         <h3 data-translate-key="feature3Title">Strategic Investment Guidance</h3>
                         <p data-translate-key="feature3Desc">Benefit from expert advice and strategic changes tailored to your financial goals and market conditions for optimal growth and security.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item animate-on-scroll">
                         <img src="icon-insurance.svg" alt="Insurance Planning Icon" class="feature-icon">
                         <h3 data-translate-key="feature4Title">Insurance Planning</h3>
                         <p data-translate-key="feature4Desc">As part of our holistic approach, we incorporate insurance planning to help protect your wealth and secure your financial future. From life and disability coverage to long-term care solutions, we ensure your risk management strategy supports your overall financial goals.</p>
@@ -91,11 +85,13 @@
 
         <section id="about" class="about-section">
             <div class="container">
-                <h2 data-translate-key="aboutTitle">About New Horizons Wealth Management</h2>
-                <p data-translate-key="aboutP1">At New Horizons Wealth Management, we recognize that managing wealth is both complex and time-intensive—especially for high-net-worth individuals with demanding lifestyles. With offices in Quebec, Ontario and Alberta, our firm is committed to delivering personalized, professional wealth management solutions that align with your financial goals and long-term vision. Our team of seasoned professionals collaborates closely with you to understand your unique circumstances and craft tailored strategies focused on investment growth, portfolio optimization, and risk management. Transparency, control, and consistent communication are the cornerstones of our approach, ensuring your financial plan stays aligned with your evolving needs.</p>
-                <p data-translate-key="aboutP2">We provide secure, real-time online access to your investment accounts, offering you a clear, up-to-date view of your portfolio’s performance. In addition, our team offers proactive, responsive support—connecting with you as frequently as you wish to review progress, discuss adjustments, and make informed decisions together. Let New Horizons Wealth Management be your trusted partner in navigating today’s financial complexities and building a confident, secure future.</p>
+                <h2 class="animate-on-scroll" data-translate-key="aboutTitle">About New Horizons Wealth Management</h2>
+                <div class="animate-on-scroll">
+                    <p data-translate-key="aboutP1">At New Horizons Wealth Management, we recognize that managing wealth is both complex and time-intensive—especially for high-net-worth individuals with demanding lifestyles. With offices in Quebec, Ontario and Alberta, our firm is committed to delivering personalized, professional wealth management solutions that align with your financial goals and long-term vision. Our team of seasoned professionals collaborates closely with you to understand your unique circumstances and craft tailored strategies focused on investment growth, portfolio optimization, and risk management. Transparency, control, and consistent communication are the cornerstones of our approach, ensuring your financial plan stays aligned with your evolving needs.</p>
+                    <p data-translate-key="aboutP2">We provide secure, real-time online access to your investment accounts, offering you a clear, up-to-date view of your portfolio’s performance. In addition, our team offers proactive, responsive support—connecting with you as frequently as you wish to review progress, discuss adjustments, and make informed decisions together. Let New Horizons Wealth Management be your trusted partner in navigating today’s financial complexities and building a confident, secure future.</p>
+                </div>
                 
-                <div class="team-member-profile">
+                <div class="team-member-profile animate-on-scroll">
                     <img src="ImranMastan.jpeg" alt="Imran Mastan, Wealth Management Advisor" class="team-member-photo">
                     <div class="team-member-profile-text">
                         <h3 data-translate-key="imranName">Imran Mastan</h3>
@@ -109,23 +105,23 @@
 
         <section id="services" class="services-section">
             <div class="container">
-                <h2 data-translate-key="servicesTitle">Our Comprehensive Services</h2>
+                <h2 class="animate-on-scroll" data-translate-key="servicesTitle">Our Comprehensive Services</h2>
                 <ul class="service-list">
-                    <li data-translate-key="service1">Investment Management</li>
-                    <li data-translate-key="service2">Insurance Planning</li>
-                    <li data-translate-key="service4">Personalized Financial Planning</li>
-                    <li data-translate-key="service5">Retirement Planning</li>
-                    <li data-translate-key="service6">Estate Planning</li>
-                    <li data-translate-key="service7">Regular Advisor Check-ins</li>
+                    <li class="animate-on-scroll" data-translate-key="service1">Investment Management</li>
+                    <li class="animate-on-scroll" data-translate-key="service2">Insurance Planning</li>
+                    <li class="animate-on-scroll" data-translate-key="service4">Personalized Financial Planning</li>
+                    <li class="animate-on-scroll" data-translate-key="service5">Retirement Planning</li>
+                    <li class="animate-on-scroll" data-translate-key="service6">Estate Planning</li>
+                    <li class="animate-on-scroll" data-translate-key="service7">Regular Advisor Check-ins</li>
                 </ul>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
             <div class="container">
-                <h2 data-translate-key="contactTitle">Contact Us</h2>
-                <p data-translate-key="contactSubtitle">Ready to explore new horizons for your wealth? Get in touch with our team today.</p>
-                <form id="contact-form">
+                <h2 class="animate-on-scroll" data-translate-key="contactTitle">Contact Us</h2>
+                <p class="animate-on-scroll" data-translate-key="contactSubtitle">Ready to explore new horizons for your wealth? Get in touch with our team today.</p>
+                <form id="contact-form" class="animate-on-scroll">
                     <div class="form-group">
                         <label for="name" data-translate-key="formName">Name:</label>
                         <input type="text" id="name" name="name" required>
