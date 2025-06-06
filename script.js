@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Translations Object ---
     const translations = {
         en: {
             pageTitle: "New Horizons Wealth Management",
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLocations: "Ontario, Québec, Alberta" 
         },
         fr: {
-            // ... (All French translations would go here, similar to the last version) ...
             pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
             navAbout: "À Propos",
             navServices: "Services",
@@ -121,40 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: "Envoyer le Message",
             footerPartnership: "En partenariat avec",
             footerRights: `© ${new Date().getFullYear()} Gestion de Patrimoine Nouveaux Horizons. Tous droits réservés.`,
-            footerLocations: "Ontario, Québec, Alberta" 
+            footerLocations: "Ontario, Québec, Alberta"
         }
     };
 
+    // --- Core Functions ---
     const enBtn = document.getElementById('en-btn');
     const frBtn = document.getElementById('fr-btn');
     let currentLang = localStorage.getItem('language') || 'en';
 
     function applyTranslations(lang) {
         document.documentElement.lang = lang;
-        const elementsToTranslate = document.querySelectorAll('[data-translate-key]');
-        elementsToTranslate.forEach(element => {
-            const key = element.getAttribute('data-translate-key');
-            if (translations[lang] && translations[lang][key]) {
-                if (element.tagName === 'TITLE') {
-                    element.textContent = translations[lang][key];
-                } else {
-                    element.textContent = translations[lang][key];
-                }
-            }
+        document.querySelectorAll('[data-translate-key]').forEach(element => {
+            const key = element.dataset.translateKey;
+            element.textContent = translations[lang][key] || element.textContent;
         });
 
         const questionsContainer = document.getElementById('questions-container');
         if(questionsContainer) {
-            questionsContainer.innerHTML = '';
+            questionsContainer.innerHTML = ''; // Clear existing questions
             for(let i = 1; i <= 6; i++) {
                 const p = document.createElement('p');
-                p.className = 'question animate-question';
-                p.dataset.sentences = translations[lang][`q${i}`] || '';
+                p.className = 'question';
+                p.dataset.key = `q${i}`;
+                p.innerHTML = `<i>${translations[lang][`q${i}`] || ''}</i>`;
                 questionsContainer.appendChild(p);
             }
         }
     }
-
+    
+    // --- Event Listeners ---
     if (enBtn && frBtn) {
         enBtn.addEventListener('click', () => {
             currentLang = 'en';
@@ -169,77 +163,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- General Scroll Animation ---
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    if (animatedElements.length > 0) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.1
-        };
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-        const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
-        animatedElements.forEach(el => animationObserver.observe(el));
-    }
-    
-    // --- Special Animation for Questions ---
-    const questionsContainer = document.getElementById('questions-container');
-    const animateQuestion = (questionElement, callback) => {
-        const text = questionElement.dataset.sentences;
-        if(!text) return;
-        const words = text.split(' ');
-        questionElement.innerHTML = '<i></i>';
-        const italicElement = questionElement.querySelector('i');
-        
-        words.forEach((word, index) => {
-            const wordSpan = document.createElement('span');
-            wordSpan.textContent = word + ' ';
-            wordSpan.className = 'question-word';
-            wordSpan.style.transitionDelay = `${index * 0.05}s`;
-            italicElement.appendChild(wordSpan);
-        });
-
-        setTimeout(() => {
-            questionElement.style.opacity = 1;
-            const wordSpans = questionElement.getElementsByClassName('question-word');
-            for(let span of wordSpans) {
-                span.style.opacity = 1;
-                span.style.transform = 'translateX(0)';
+    document.querySelectorAll('.main-nav a[href^="#"], .cta-button').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 100);
-
-        setTimeout(callback, words.length * 50 + 1000); 
-    };
-
-    const questionObserver = new IntersectionObserver((entries, observer) => {
+        });
+    });
+    
+    // --- Intersection Observers for Animations ---
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animationObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                const questions = Array.from(questionsContainer.getElementsByClassName('question'));
-                let currentIndex = 0;
-                const animateNext = () => {
-                    if(currentIndex < questions.length) {
-                        animateQuestion(questions[currentIndex], () => {
-                            currentIndex++;
-                            animateNext();
-                        });
-                    }
-                };
-                animateNext();
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => animationObserver.observe(el));
+
+    const questionsContainer = document.getElementById('questions-container');
+    const questionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const questions = Array.from(entry.target.children);
+                let delay = 0;
+                questions.forEach(q => {
+                    setTimeout(() => {
+                        q.classList.add('visible');
+                    }, delay);
+                    delay += 1000; // Stagger each question's appearance
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
 
     if(questionsContainer) {
         questionObserver.observe(questionsContainer);
     }
-    
-    applyTranslations(currentLang); // Initial translation
+
+    // --- Contact Form ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! (This is a demo)');
+            contactForm.reset();
+        });
+    }
+
+    // --- Initial Load ---
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    applyTranslations(currentLang);
 });
