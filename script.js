@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const questionsContainer = document.getElementById('questions-container');
         if(questionsContainer) {
-            questionsContainer.innerHTML = ''; // Clear existing questions
-            for(let i = 1; i <= 6; i++) {
+            questionsContainer.innerHTML = ''; 
+            for (let i = 1; i <= 6; i++) {
                 const p = document.createElement('p');
                 p.className = 'question';
                 p.dataset.key = `q${i}`;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         q.classList.add('visible');
                     }, delay);
-                    delay += 1000; // Stagger each question's appearance
+                    delay += 1000; // Stagger each question
                 });
                 observer.unobserve(entry.target);
             }
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(questionsContainer) {
         questionObserver.observe(questionsContainer);
     }
-
+    
     // --- Contact Form ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
