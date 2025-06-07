@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLocations: "Ontario, Québec, Alberta" 
         },
         fr: {
-            // (All French translations would go here, similar to the last version) 
             pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
             navAbout: "À Propos",
             navServices: "Services",
@@ -213,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         setTimeout(() => {
                             q.classList.add('visible');
                         }, delay);
-                        delay += 1000; // Stagger each question
+                        delay += 1000;
                     });
                     observer.unobserve(entry.target);
                 }
