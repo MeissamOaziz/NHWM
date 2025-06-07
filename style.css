@@ -89,17 +89,16 @@ p {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding-bottom: 8px;
     color: var(--primary-dark-blue);
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .main-nav a:hover, .main-nav a.active-link {
-    background-color: var(--primary-dark-blue);
-    color: var(--text-light);
-    text-decoration: none;
+    color: var(--primary-light-blue);
+    border-bottom-color: var(--primary-light-blue);
 }
 
 .language-switch { margin-left: 25px; }
@@ -296,7 +295,7 @@ section {
     align-items: stretch;
     gap: 50px;
 }
-#features h2 { /* Title above the layout grid */
+#features h2 {
     text-align: center;
     width: 100%;
     margin-bottom: 50px;
@@ -368,7 +367,7 @@ section {
 }
 .question {
     font-style: italic;
-    font-size: 1.2rem; /* Adjusted for one line */
+    font-size: 1.2rem;
     line-height: 1.7;
     margin-bottom: 1.5em;
     min-height: 50px;
@@ -383,8 +382,8 @@ section {
 
 /* --- Services Section --- */
 .services-section .service-list {
-    list-style-type: none; /* Remove bullet points */
-    padding-left: 0; /* Remove default padding */
+    list-style-type: none;
+    padding-left: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
@@ -414,6 +413,34 @@ section {
     padding: 40px;
     border-radius: 8px;
 }
+.form-group { margin-bottom: 25px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-medium-blue);
+    color: var(--text-light);
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.submit-btn:hover { background-color: var(--primary-dark-blue); }
 
 /* --- Footer --- */
 .site-footer-bottom {
@@ -450,6 +477,7 @@ section {
     }
     .hero-section { background-attachment: scroll; }
     .features-image-container { display: none; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
