@@ -49,7 +49,7 @@ p {
     margin-bottom: 1.1em;
 }
 
-/* --- Header --- */
+/* --- Header (Reverted to preferred style) --- */
 .site-header {
     background-color: var(--bg-light);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -232,6 +232,34 @@ section {
     width: 100%;
 }
 
+.team-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+.team-member-profile {
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: var(--bg-medium);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.team-member-photo {
+    width: auto;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.team-member-profile-text { flex-grow: 1; }
+.team-member-profile-text h3 { text-align: left; }
+.team-member-profile-text p { text-align: left; }
+
+
 /* --- Our Numbers Section --- */
 .our-numbers-section h2 { color: var(--primary-dark-blue); }
 .numbers-grid {
@@ -267,31 +295,33 @@ section {
 /* --- Features Section --- */
 #features .features-container {
     display: flex;
-    align-items: stretch; /* Make columns equal height */
+    align-items: stretch;
     gap: 50px;
 }
-.features-content {
-    flex: 2; /* Takes up 2/3 of space */
-}
+.features-content { flex: 2; }
 .features-image-container {
-    flex: 1; /* Takes up 1/3 of space */
-    min-width: 300px; /* Prevent image from getting too squished */
+    flex: 1;
+    min-width: 300px;
 }
 .features-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the area, cropping as needed */
+    object-fit: cover;
     border-radius: 8px;
 }
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    height: 100%;
 }
 .feature-item {
     background-color: var(--bg-medium);
     padding: 35px 30px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 .feature-icon {
     width: 50px;
@@ -309,13 +339,13 @@ section {
     background: var(--bg-light);
     padding: 35px;
     border-radius: 8px;
-    margin-bottom: 25px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    flex: 1; /* Allow items to share space equally */
+    flex: 1;
+    text-align: center;
 }
 .testimonial .quote {
     font-style: italic;
-    font-size: 1.1rem; /* Adjusted for horizontal layout */
+    font-size: 1.1rem;
     margin-bottom: 20px;
 }
 .testimonial .author {
@@ -351,17 +381,17 @@ section {
     gap: 25px;
 }
 .services-section .service-list li {
-    background-color: rgba(255, 255, 255, 0.05); /* Subtle background on dark blue */
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 30px 25px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     color: var(--text-light);
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 .services-section .service-list li:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
-
 
 /* --- Contact Section --- */
 .contact-subtitle {
@@ -373,6 +403,19 @@ section {
     background-color: var(--bg-medium);
     padding: 40px;
     border-radius: 8px;
+}
+.form-group { margin-bottom: 25px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 /* --- Footer --- */
@@ -405,9 +448,11 @@ section {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .about-content, #features .features-container { flex-direction: column; }
+    .about-content, #features .features-container, .testimonial-slider { 
+        flex-direction: column; 
+    }
     .hero-section { background-attachment: scroll; }
-    .testimonial-slider { flex-direction: column; }
+    .features-image-container { display: none; } /* Hide side image on smaller screens */
 }
 
 @media (max-width: 768px) {
@@ -416,4 +461,5 @@ section {
     .header-container { flex-direction: column; gap: 15px; }
     .main-nav ul { flex-wrap: wrap; justify-content: center; }
     .feature-grid { grid-template-columns: 1fr; }
+    .team-member-profile { flex-direction: column; }
 }
