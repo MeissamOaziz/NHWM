@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "About New Horizons Wealth Management",
             aboutIntro: "At New Horizons Wealth Management, we move beyond standard solutions to offer wealth management that's precisely tailored to your individual aspirations. Whether you're envisioning a comfortable retirement, strategic investment growth, or a secure financial legacy, our approach is rooted in creating personalized strategies that resonate with your values and long-term objectives.",
             aboutP2: "With a foundation built on extensive experience and a steadfast commitment to transparency, our dedicated team empowers you to navigate your financial future with confidence and clarity. We believe in fostering strong, collaborative relationships, providing clear advice supported by real-time access to your investment portfolio. Let New Horizons Wealth Management be your trusted partner in simplifying the complexities of today’s financial markets.",
+            teamSectionTitle: "Our Team",
+            imranName: "Imran Mastan",
+            imranP1: "With over a decade of experience in the financial industry, Imran has built a reputation for delivering thoughtful, results-driven wealth management solutions tailored to each client's unique goals. His expertise spans asset growth, tax-efficient investment strategies, retirement and estate planning—ensuring that every aspect of a client’s financial life is handled with care and precision.",
+            imranP2: "Imran takes a client-first approach rooted in trust, integrity, and transparency. He is deeply committed to his fiduciary responsibility, always acting in the best interest of those he serves. His clients value not only his technical knowledge but also his genuine dedication to helping them build, preserve, and transition their wealth with confidence.",
+            imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
             numbersRevenue: "Increase in Client Revenue (Average)",
@@ -75,6 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
             aboutIntro: "Chez Gestion de Patrimoine Nouveaux Horizons, nous allons au-delà des solutions standards pour offrir une gestion de patrimoine précisément adaptée à vos aspirations individuelles. Que vous envisagiez une retraite confortable, une croissance stratégique de vos investissements ou un héritage financier sécurisé, notre approche est ancrée dans la création de stratégies personnalisées qui résonnent avec vos valeurs et vos objectifs à long terme.",
             aboutP2: "Fondée sur une vaste expérience et un engagement inébranlable envers la transparence, notre équipe dévouée vous donne les moyens de naviguer votre avenir financier avec confiance et clarté. Nous croyons en la promotion de relations solides et collaboratives, en fournissant des conseils clairs soutenus par un accès en temps réel à votre portefeuille d'investissement. Laissez Gestion de Patrimoine Nouveaux Horizons être votre partenaire de confiance pour simplifier les complexités des marchés financiers d'aujourd'hui.",
+            teamSectionTitle: "Notre Équipe",
+            imranName: "Imran Mastan",
+            imranP1: "Avec plus d'une décennie d'expérience dans le secteur financier, Imran s'est bâti une réputation pour la prestation de solutions de gestion de patrimoine réfléchies et axées sur les résultats, adaptées aux objectifs uniques de chaque client. Son expertise couvre la croissance des actifs, les stratégies d'investissement fiscalement avantageuses, la planification de la retraite et successorale, garantissant que chaque aspect de la vie financière d'un client est traité avec soin et précision.",
+            imranP2: "Imran adopte une approche axée sur le client, ancrée dans la confiance, l'intégrité et la transparence. Il est profondément engagé envers sa responsabilité fiduciaire, agissant toujours dans le meilleur intérêt de ceux qu'il sert. Ses clients apprécient non seulement ses connaissances techniques, mais aussi son dévouement sincère à les aider à bâtir, préserver et transmettre leur patrimoine avec confiance.",
+            imranP3: "Qu'il s'agisse de faire croître votre portefeuille, de minimiser vos obligations fiscales ou de veiller à ce que votre plan successoral reflète votre héritage, Imran travaille avec diligence pour simplifier la complexité et offrir la tranquillité d'esprit, afin que vous puissiez vous concentrer sur ce qui compte le plus.",
             numbersTitle: "Nos Chiffres Parlent d'Eux-Mêmes",
             numbersExperience: "Années d'Expérience",
             numbersRevenue: "Augmentation des Revenus Clients (Moyenne)",
@@ -196,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         q.classList.add('visible');
                     }, delay);
-                    delay += 1000; // Stagger each question
+                    delay += 1000;
                 });
                 observer.unobserve(entry.target);
             }
