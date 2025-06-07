@@ -161,80 +161,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- Event Listeners & Initializers ---
-    document.addEventListener('DOMContentLoaded', () => {
-        // Language Switcher
-        if (enBtn && frBtn) {
-            enBtn.addEventListener('click', () => {
-                currentLang = 'en';
-                localStorage.setItem('language', currentLang);
-                applyTranslations(currentLang);
-            });
-
-            frBtn.addEventListener('click', () => {
-                currentLang = 'fr';
-                localStorage.setItem('language', currentLang);
-                applyTranslations(currentLang);
-            });
-        }
-
-        // Smooth Scrolling
-        document.querySelectorAll('.main-nav a[href^="#"], .cta-button').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+    
+    // Language Switcher
+    if (enBtn && frBtn) {
+        enBtn.addEventListener('click', () => {
+            currentLang = 'en';
+            localStorage.setItem('language', currentLang);
+            applyTranslations(currentLang);
         });
-        
-        // General Scroll Animation
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        const animationObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        animatedElements.forEach(el => animationObserver.observe(el));
 
-        // Special Animation for Questions
-        const questionsContainer = document.getElementById('questions-container');
-        const questionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    const questions = Array.from(entry.target.children);
-                    let delay = 0;
-                    questions.forEach(q => {
-                        setTimeout(() => {
-                            q.classList.add('visible');
-                        }, delay);
-                        delay += 1000;
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
+        frBtn.addEventListener('click', () => {
+            currentLang = 'fr';
+            localStorage.setItem('language', currentLang);
+            applyTranslations(currentLang);
+        });
+    }
 
-        if(questionsContainer) {
-            questionObserver.observe(questionsContainer);
-        }
-        
-        // Contact Form
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! (This is a demo)');
-                contactForm.reset();
-            });
-        }
-
-        // Initial Load
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        applyTranslations(currentLang);
+    // Smooth Scrolling
+    document.querySelectorAll('.main-nav a[href^="#"], .cta-button').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
+    
+    // General Scroll Animation
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animationObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => animationObserver.observe(el));
+
+    // Special Animation for Questions
+    const questionsContainer = document.getElementById('questions-container');
+    const questionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const questions = Array.from(entry.target.children);
+                let delay = 0;
+                questions.forEach(q => {
+                    setTimeout(() => {
+                        q.classList.add('visible');
+                    }, delay);
+                    delay += 1000; // Stagger each question
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    if(questionsContainer) {
+        questionObserver.observe(questionsContainer);
+    }
+    
+    // Contact Form
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! (This is a demo)');
+            contactForm.reset();
+        });
+    }
+
+    // Initial Load
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    applyTranslations(currentLang);
 });
