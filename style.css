@@ -81,16 +81,16 @@ p {
 }
 
 .main-nav li {
-    margin-left: 20px;
+    margin-left: 15px; /* Reduced margin */
 }
 
 .main-nav a {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* Slightly reduced font size */
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 12px; /* Adjusted padding */
+    border-radius: 50px; /* Pill shape */
     color: var(--primary-dark-blue);
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease;
@@ -104,14 +104,14 @@ p {
 
 .login-btn {
     background-color: var(--primary-light-blue);
-    color: var(--text-light) !important; /* Use !important to override default link color */
+    color: var(--text-light) !important;
 }
 .login-btn:hover {
     background-color: var(--accent-gold) !important;
     color: var(--primary-dark-blue) !important;
 }
 
-.language-switch { margin-left: 20px; }
+.language-switch { margin-left: 15px; }
 .lang-btn {
     background: none;
     border: 1px solid var(--border-color);
@@ -210,7 +210,6 @@ section {
     color: var(--text-light);
 }
 
-
 /* --- Scroll Animation --- */
 .animate-on-scroll {
     opacity: 0;
@@ -296,13 +295,15 @@ section {
 }
 
 /* --- Features Section --- */
-.features-section h2 {
-    margin-bottom: 50px;
-}
-.features-layout {
+#features .features-layout {
     display: flex;
     align-items: stretch;
     gap: 50px;
+}
+#features h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 .features-content {
     flex: 2;
@@ -343,15 +344,19 @@ section {
 .testimonial-slider {
     display: flex;
     gap: 30px;
-    justify-content: space-between;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 20px; /* Space for scrollbar */
+    scroll-snap-type: x mandatory; /* Snap scrolling */
 }
 .testimonial {
     background: var(--bg-light);
     padding: 35px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    flex: 1;
+    flex: 0 0 30%; /* Set width, e.g., 30% to show ~3 items */
+    min-width: 300px; /* Minimum width for readability */
     text-align: center;
+    scroll-snap-align: start; /* Snap to the start of the item */
 }
 .testimonial .quote {
     font-style: italic;
@@ -392,7 +397,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
 }
-.services-section .service-list li {
+.services-section .service-list .service-item {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 30px 25px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -402,7 +407,7 @@ section {
     text-align: center;
     font-weight: 600;
 }
-.services-section .service-list li:hover {
+.services-section .service-list .service-item:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -417,6 +422,30 @@ section {
     padding: 40px;
     border-radius: 8px;
 }
+.contact-info {
+    text-align: center;
+    margin-bottom: 2em;
+}
+#reveal-phone-btn {
+    background-color: var(--primary-medium-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+#reveal-phone-btn:hover {
+    background-color: var(--primary-dark-blue);
+}
+.phone-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-dark-blue);
+}
+
 .form-group { margin-bottom: 25px; }
 .form-group label {
     display: block;
@@ -476,20 +505,27 @@ section {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .about-content, #features .features-layout, .testimonial-slider { 
+    .about-content, #features .features-layout { 
         flex-direction: column; 
     }
     .hero-section { background-attachment: scroll; }
     .features-image-container { display: none; }
     .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-slider {
+        scroll-snap-type: none; /* Disable snapping on smaller screens if it feels clunky */
+    }
 }
 
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .header-container { flex-direction: column; gap: 15px; }
-    .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .main-nav li { margin-left: 10px; }
+    .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 5px; }
+    .main-nav li { margin: 0; }
     .feature-grid { grid-template-columns: 1fr; }
     .team-member-profile { flex-direction: column; }
+    .testimonial-slider {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
 }
