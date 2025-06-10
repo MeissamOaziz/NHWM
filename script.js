@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contact Us",
             navLogin: "Client Login",
             logoSrc: "New Horizons - Logo - RGB.png",
-            heroTitle: "Your Goals. Your Future. Our Expertise.",
+            heroTitle: "Your Goals. Your Future.<br>Our Expertise.",
             heroTagline: "Navigate your financial journey with confidence.",
             heroCTA: "Schedule a Consultation",
             aboutTitle: "About New Horizons Wealth Management",
@@ -42,6 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonial2Author: "- John B.",
             testimonial3Quote: `"New Horizons provided tailored advice that perfectly suited my retirement planning needs. I feel much more secure about my future thanks to their expertise."`,
             testimonial3Author: "- Emily K.",
+            testimonial4Quote: `"The level of detail in their financial planning is unmatched. I finally have a clear roadmap for my family's wealth."`,
+            testimonial4Author: "- David L.",
+            testimonial5Quote: `"Navigating tax season used to be a nightmare. Their strategic advice has saved me a significant amount and simplified the entire process."`,
+            testimonial5Author: "- Jennifer A.",
+            testimonial6Quote: `"Their team is not only knowledgeable but also genuinely caring. It feels like a true partnership working towards my best interests."`,
+            testimonial6Author: "- Michael T.",
+            testimonial7Quote: `"As a business owner, my finances are complex. New Horizons has seamlessly integrated my personal and business wealth plans."`,
+            testimonial7Author: "- Olivia C.",
+            testimonial8Quote: `"The peace of mind that comes from their comprehensive insurance planning is invaluable. I know my family is protected."`,
+            testimonial8Author: "- Robert P.",
+            testimonial9Quote: `"Their quarterly touchpoints keep me informed and confident in our strategy, without overwhelming me with unnecessary details."`,
+            testimonial9Author: "- Jessica W.",
+            testimonial10Quote: `"I've recommended New Horizons to several colleagues. Their expertise and commitment to clients are second to none."`,
+            testimonial10Author: "- Mark S.",
             triggerQuestionsTitle: "Are You Asking Yourself These Questions?",
             q1: "You work hard for your money, but haven't found out how your money can work for you yet?",
             q2: "Do you feel like you don't have full control over your investments?",
@@ -58,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             service7: "Regular Advisor Check-ins",
             contactTitle: "Contact Us",
             contactSubtitle: "Ready to explore new horizons for your wealth? Get in touch with our team today.",
+            revealPhone: "Click to Reveal Phone Number",
             formName: "Name:",
             formEmail: "Email:",
             formPhone: "Phone:",
@@ -77,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Nous Joindre",
             navLogin: "Connexion Client",
             logoSrc: "Nouveaux Horizons - Logo - RGB.png",
-            heroTitle: "Vos Buts. Votre Avenir. Notre Expertise.",
+            heroTitle: "Vos Buts. Votre Avenir.<br>Notre Expertise.",
             heroTagline: "Naviguez votre parcours financier avec confiance.",
             heroCTA: "Planifier une Consultation",
             aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
@@ -108,6 +123,20 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonial2Author: "- John B.",
             testimonial3Quote: `"Nouveaux Horizons a fourni des conseils sur mesure qui correspondaient parfaitement à mes besoins en matière de planification de la retraite. Je me sens beaucoup plus en sécurité pour mon avenir grâce à leur expertise."`,
             testimonial3Author: "- Emily K.",
+            testimonial4Quote: `"Le niveau de détail de leur planification financière est inégalé. J'ai enfin une feuille de route claire pour le patrimoine de ma famille."`,
+            testimonial4Author: "- David L.",
+            testimonial5Quote: `"La saison des impôts était un cauchemar. Leurs conseils stratégiques m'ont permis d'économiser un montant important et ont simplifié tout le processus."`,
+            testimonial5Author: "- Jennifer A.",
+            testimonial6Quote: `"Leur équipe n'est pas seulement compétente, mais aussi sincèrement attentionnée. On se sent comme dans un véritable partenariat qui œuvre pour mes meilleurs intérêts."`,
+            testimonial6Author: "- Michael T.",
+            testimonial7Quote: `"En tant que propriétaire d'entreprise, mes finances sont complexes. Nouveaux Horizons a intégré de manière transparente mes plans de patrimoine personnel et professionnel."`,
+            testimonial7Author: "- Olivia C.",
+            testimonial8Quote: `"La tranquillité d'esprit que procure leur planification d'assurance complète est inestimable. Je sais que ma famille est protégée."`,
+            testimonial8Author: "- Robert P.",
+            testimonial9Quote: `"Leurs points de contact trimestriels me tiennent informé et confiant dans notre stratégie, sans me submerger de détails inutiles."`,
+            testimonial9Author: "- Jessica W.",
+            testimonial10Quote: `"J'ai recommandé Nouveaux Horizons à plusieurs collègues. Leur expertise et leur engagement envers les clients sont inégalés."`,
+            testimonial10Author: "- Mark S.",
             triggerQuestionsTitle: "Vous Posez-Vous Ces Questions?",
             q1: "Vous travaillez dur pour votre argent, mais n'avez pas encore découvert comment votre argent peut travailler pour vous?",
             q2: "Sentez-vous que vous n'avez pas le plein contrôle de vos investissements?",
@@ -124,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             service7: "Rencontres Régulières avec le Conseiller",
             contactTitle: "Nous Joindre",
             contactSubtitle: "Prêt(e) à explorer de nouveaux horizons pour votre patrimoine? Contactez notre équipe dès aujourd'hui.",
+            revealPhone: "Cliquez pour Révéler le Numéro",
             formName: "Nom :",
             formEmail: "Courriel :",
             formPhone: "Téléphone :",
@@ -147,7 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.dataset.translateKey;
             if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
+                // Use innerHTML for keys that might contain <br> tags
+                if (key === 'heroTitle') {
+                    element.innerHTML = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
 
@@ -239,7 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
             questionObserver.disconnect();
             observeQuestions();
         }
-        // Update active nav links on lang switch if needed
         changeNavOnScroll();
     }
     
@@ -253,6 +287,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Phone Number Reveal
+    const revealBtn = document.getElementById('reveal-phone-btn');
+    if(revealBtn) {
+        revealBtn.addEventListener('click', function() {
+            const phoneContainer = this.parentNode;
+            const phoneNumber = '(514) 451-2853';
+            const phoneLink = document.createElement('a');
+            phoneLink.href = `tel:${phoneNumber}`;
+            phoneLink.textContent = phoneNumber;
+            phoneLink.className = 'phone-number';
+            phoneContainer.replaceChild(phoneLink, this);
+        });
+    }
+
     // Active Nav Link Highlighting
     const navLinks = document.querySelectorAll('.main-nav a');
     const sections = document.querySelectorAll('main section');
@@ -262,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
         
         navLinks.forEach((link) => link.classList.remove('active-link'));
-        if (index > -1) { // Check if a section is active
+        if (index > -1) { 
             const activeLink = document.querySelector(`.main-nav a[href="#${sections[index].id}"]`);
             if (activeLink) {
                 activeLink.classList.add('active-link');
