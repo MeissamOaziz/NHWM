@@ -81,7 +81,7 @@ p {
 }
 
 .main-nav li {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .main-nav a {
@@ -93,7 +93,7 @@ p {
     border-radius: 4px;
     color: var(--primary-dark-blue);
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .main-nav a:hover, .main-nav a.active-link {
@@ -102,7 +102,16 @@ p {
     text-decoration: none;
 }
 
-.language-switch { margin-left: 25px; }
+.login-btn {
+    background-color: var(--primary-light-blue);
+    color: var(--text-light) !important; /* Use !important to override default link color */
+}
+.login-btn:hover {
+    background-color: var(--accent-gold) !important;
+    color: var(--primary-dark-blue) !important;
+}
+
+.language-switch { margin-left: 20px; }
 .lang-btn {
     background: none;
     border: 1px solid var(--border-color);
@@ -191,21 +200,16 @@ section {
     padding: 100px 0;
 }
 
-#about, #features, #contact {
-    background-color: var(--bg-light);
-}
-
-#our-numbers, #testimonials {
-    background-color: var(--alt-bg-color); 
-}
-
-#trigger-questions, #services {
+.bg-light { background-color: var(--bg-light); }
+.bg-alt { background-color: var(--alt-bg-color); }
+.bg-dark {
     background-color: var(--primary-dark-blue);
     color: var(--text-light);
 }
-#trigger-questions h2, #services h2 {
+.bg-dark h2 {
     color: var(--text-light);
 }
+
 
 /* --- Scroll Animation --- */
 .animate-on-scroll {
@@ -254,6 +258,7 @@ section {
     flex-shrink: 0;
 }
 .team-member-profile-text { flex-grow: 1; }
+.team-member-profile-text h2 { text-align: left; }
 .team-member-profile-text h3 { text-align: left; }
 .team-member-profile-text p { text-align: left; }
 
@@ -291,15 +296,13 @@ section {
 }
 
 /* --- Features Section --- */
-#features .features-layout {
+.features-section h2 {
+    margin-bottom: 50px;
+}
+.features-layout {
     display: flex;
     align-items: stretch;
     gap: 50px;
-}
-#features h2 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 50px;
 }
 .features-content {
     flex: 2;
@@ -362,13 +365,13 @@ section {
 
 /* --- Trigger Questions Section Revamped --- */
 .questions-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     text-align: center;
 }
 .question {
     font-style: italic;
-    font-size: 1.15rem; /* This size applies to ALL questions */
+    font-size: 1.15rem;
     line-height: 1.7;
     margin-bottom: 1.5em;
     min-height: 50px;
@@ -485,7 +488,8 @@ section {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .header-container { flex-direction: column; gap: 15px; }
-    .main-nav ul { flex-wrap: wrap; justify-content: center; }
+    .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .main-nav li { margin-left: 10px; }
     .feature-grid { grid-template-columns: 1fr; }
     .team-member-profile { flex-direction: column; }
 }
