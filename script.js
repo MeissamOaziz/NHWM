@@ -177,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.dataset.translateKey;
             if (translations[lang] && translations[lang][key]) {
-                // Use innerHTML for keys that might contain <br> tags
                 if (key === 'heroTitle') {
                     element.innerHTML = translations[lang][key];
                 } else {
@@ -294,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const phoneContainer = this.parentNode;
             const phoneNumber = '(514) 451-2853';
             const phoneLink = document.createElement('a');
-            phoneLink.href = `tel:${phoneNumber}`;
+            phoneLink.href = `tel:${phoneNumber.replace(/\s/g, '')}`;
             phoneLink.textContent = phoneNumber;
             phoneLink.className = 'phone-number';
             phoneContainer.replaceChild(phoneLink, this);
@@ -307,7 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function changeNavOnScroll() {
         let index = sections.length;
-        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        const offset = window.innerHeight * 0.4;
+        while(--index && window.scrollY + offset < sections[index].offsetTop) {}
         
         navLinks.forEach((link) => link.classList.remove('active-link'));
         if (index > -1) { 
