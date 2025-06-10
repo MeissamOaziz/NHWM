@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navTestimonials: "Testimonials",
             navNumbers: "Our Numbers",
             navContact: "Contact Us",
-            heroTitle: "Wealth Management, Tailored to You",
-            heroTagline: "Your Financial Journey, Elevated.",
+            navLogin: "Client Login",
+            logoSrc: "New Horizons - Logo - RGB.png",
+            heroTitle: "Your Goals. Your Future. Our Expertise.",
+            heroTagline: "Navigate your financial journey with confidence.",
             heroCTA: "Schedule a Consultation",
             aboutTitle: "About New Horizons Wealth Management",
             aboutIntro: "At New Horizons Wealth Management, we move beyond standard solutions to offer wealth management that's precisely tailored to your individual aspirations. Whether you're envisioning a comfortable retirement, strategic investment growth, or a secure financial legacy, our approach is rooted in creating personalized strategies that resonate with your values and long-term objectives.",
@@ -22,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
             imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
-            numbersRevenue: "Increase in Client Revenue (Average)",
-            numbersSatisfaction: "Client Satisfaction Rate",
-            numbersClients: "Happy Clients",
+            numbersSatisfaction: "Client Retention Rate",
+            numbersClients: "Satisfied Clients",
             featuresTitle: "Empowering Your Financial Journey",
             feature1Title: "Holistic Financial Planning",
             feature1Desc: "Through close partnership and full transparency, we align every aspect of your wealth strategy to support your long-term goals. From investments to insurance, estate planning to tax strategies, everything works together seamlessly.",
@@ -74,8 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navTestimonials: "Témoignages",
             navNumbers: "Nos Chiffres",
             navContact: "Nous Joindre",
-            heroTitle: "Gestion de Patrimoine, Sur Mesure Pour Vous",
-            heroTagline: "Votre Parcours Financier, Rehaussé.",
+            navLogin: "Connexion Client",
+            logoSrc: "Nouveaux Horizons - Logo - RGB.png",
+            heroTitle: "Vos Buts. Votre Avenir. Notre Expertise.",
+            heroTagline: "Naviguez votre parcours financier avec confiance.",
             heroCTA: "Planifier une Consultation",
             aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
             aboutIntro: "Chez Gestion de Patrimoine Nouveaux Horizons, nous allons au-delà des solutions standards pour offrir une gestion de patrimoine précisément adaptée à vos aspirations individuelles. Que vous envisagiez une retraite confortable, une croissance stratégique de vos investissements ou un héritage financier sécurisé, notre approche est ancrée dans la création de stratégies personnalisées qui résonnent avec vos valeurs et vos objectifs à long terme.",
@@ -87,8 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imranP3: "Qu'il s'agisse de faire croître votre portefeuille, de minimiser vos obligations fiscales ou de veiller à ce que votre plan successoral reflète votre héritage, Imran travaille avec diligence pour simplifier la complexité et offrir la tranquillité d'esprit, afin que vous puissiez vous concentrer sur ce qui compte le plus.",
             numbersTitle: "Nos Chiffres Parlent d'Eux-Mêmes",
             numbersExperience: "Années d'Expérience",
-            numbersRevenue: "Augmentation des Revenus Clients (Moyenne)",
-            numbersSatisfaction: "Taux de Satisfaction Client",
+            numbersSatisfaction: "Taux de Rétention des Clients",
             numbersClients: "Clients Satisfaits",
             featuresTitle: "Optimiser Votre Parcours Financier",
             feature1Title: "Planification Financière Globale",
@@ -133,37 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // --- Core Functions ---
     const enBtn = document.getElementById('en-btn');
     const frBtn = document.getElementById('fr-btn');
     let currentLang = localStorage.getItem('language') || 'en';
     const questionsContainer = document.getElementById('questions-container');
+    const logoImg = document.getElementById('logo-img');
 
-    // --- Animation Observers ---
-    const animationObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const questionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                const questions = Array.from(entry.target.children);
-                let delay = 0;
-                questions.forEach(q => {
-                    setTimeout(() => { q.classList.add('visible'); }, delay);
-                    delay += 1000; // Stagger each question's appearance
-                });
-                observer.unobserve(entry.target); // Unobserve after it has run
-            }
-        });
-    }, { threshold: 0.2 });
-
-    // --- Core Functions ---
-    function applyStaticTranslations(lang) {
+    function applyTranslations(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.dataset.translateKey;
@@ -171,38 +150,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.textContent = translations[lang][key];
             }
         });
-    }
 
-    function populateAndObserveQuestions(lang) {
-        if (!questionsContainer) return;
-        questionsContainer.innerHTML = ''; 
-        for (let i = 1; i <= 6; i++) {
-            const p = document.createElement('p');
-            p.className = 'question'; // CSS will keep it invisible initially
-            p.dataset.key = `q${i}`;
-            p.innerHTML = `<i>${translations[lang][`q${i}`] || ''}</i>`;
-            questionsContainer.appendChild(p);
+        if (logoImg && translations[lang] && translations[lang].logoSrc) {
+            logoImg.src = translations[lang].logoSrc;
         }
-        // Disconnect the old observer and re-observe the container
-        // This ensures the animation can run again for the new elements
-        questionObserver.disconnect();
-        questionObserver.observe(questionsContainer);
+
+        if(questionsContainer) {
+            questionsContainer.innerHTML = ''; 
+            for (let i = 1; i <= 6; i++) {
+                const p = document.createElement('p');
+                p.className = 'question';
+                p.dataset.key = `q${i}`;
+                p.innerHTML = `<i>${translations[lang][`q${i}`] || ''}</i>`;
+                questionsContainer.appendChild(p);
+            }
+        }
     }
     
-    function setLanguage(lang) {
-        applyStaticTranslations(lang);
-        populateAndObserveQuestions(lang); // This now handles the questions section
-
-        // Update button active states
-        if (lang === 'en') {
-            enBtn.classList.add('active');
-            frBtn.classList.remove('active');
-        } else {
-            frBtn.classList.add('active');
-            enBtn.classList.remove('active');
-        }
-    }
-
     // --- Event Listeners and Initializers ---
     
     // Language Switcher
@@ -223,26 +187,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Scrolling
     document.querySelectorAll('.main-nav a[href^="#"], .cta-button').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                const headerOffset = document.querySelector('.site-header').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                     top: offsetPosition,
-                     behavior: "smooth"
-                });
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });
     
-    // Set up General Scroll Animations
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        animationObserver.observe(el);
-    });
+    // General Scroll Animation
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animationObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => animationObserver.observe(el));
+
+    // Special Animation for Questions
+    const questionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const questions = Array.from(entry.target.children);
+                let delay = 0;
+                questions.forEach(q => {
+                    setTimeout(() => {
+                        q.classList.add('visible');
+                    }, delay);
+                    delay += 1000;
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    function observeQuestions() {
+        if(questionsContainer) {
+            questionObserver.observe(questionsContainer);
+        }
+    }
+    
+    function setLanguage(lang) {
+        applyTranslations(lang);
+        if (questionsContainer) {
+            questionObserver.disconnect();
+            observeQuestions();
+        }
+        // Update active nav links on lang switch if needed
+        changeNavOnScroll();
+    }
     
     // Contact Form
     const contactForm = document.getElementById('contact-form');
@@ -254,7 +253,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Active Nav Link Highlighting
+    const navLinks = document.querySelectorAll('.main-nav a');
+    const sections = document.querySelectorAll('main section');
+    
+    function changeNavOnScroll() {
+        let index = sections.length;
+        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        navLinks.forEach((link) => link.classList.remove('active-link'));
+        if (index > -1) { // Check if a section is active
+            const activeLink = document.querySelector(`.main-nav a[href="#${sections[index].id}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active-link');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', changeNavOnScroll);
+
     // Initial Load
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    setLanguage(currentLang); // Initial call to set language and populate questions
+    setLanguage(currentLang);
 });
