@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imranName: "Imran Mastan",
             imranP1: "With over a decade of experience in the financial industry, Imran has built a reputation for delivering thoughtful, results-driven wealth management solutions tailored to each client's unique goals. His expertise spans asset growth, tax-efficient investment strategies, retirement and estate planning—ensuring that every aspect of a client’s financial life is handled with care and precision.",
             imranP2: "Imran takes a client-first approach rooted in trust, integrity, and transparency. He is deeply committed to his fiduciary responsibility, always acting in the best interest of those he serves. His clients value not only his technical knowledge but also his genuine dedication to helping them build, preserve, and transition their wealth with confidence.",
-            imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
             numbersSatisfaction: "Client Retention Rate",
@@ -83,84 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLocations: "Ontario, Québec, Alberta" 
         },
         fr: {
-            pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
-            navAbout: "À Propos",
-            navServices: "Services",
-            navFeatures: "Nos Atouts",
-            navTestimonials: "Témoignages",
-            navNumbers: "Nos Chiffres",
-            navContact: "Nous Joindre",
-            navLogin: "Connexion Client",
-            logoSrc: "Nouveaux Horizons - Logo - RGB.png",
-            heroTitle: "Vos Buts. Votre Avenir.<br>Notre Expertise.",
-            heroTagline: "Naviguez votre parcours financier avec confiance.",
-            heroCTA: "Planifier une Consultation",
-            aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
-            aboutIntro: "Chez Gestion de Patrimoine Nouveaux Horizons, nous allons au-delà des solutions standards pour offrir une gestion de patrimoine précisément adaptée à vos aspirations individuelles. Que vous envisagiez une retraite confortable, une croissance stratégique de vos investissements ou un héritage financier sécurisé, notre approche est ancrée dans la création de stratégies personnalisées qui résonnent avec vos valeurs et vos objectifs à long terme.",
-            aboutP2: "Fondée sur une vaste expérience et un engagement inébranlable envers la transparence, notre équipe dévouée vous donne les moyens de naviguer votre avenir financier avec confiance et clarté. Nous croyons en la promotion de relations solides et collaboratives, en fournissant des conseils clairs soutenus par un accès en temps réel à votre portefeuille d'investissement. Laissez Gestion de Patrimoine Nouveaux Horizons être votre partenaire de confiance pour simplifier les complexités des marchés financiers d'aujourd'hui.",
-            teamSectionTitle: "Notre Équipe",
-            imranName: "Imran Mastan",
-            imranP1: "Avec plus d'une décennie d'expérience dans le secteur financier, Imran s'est bâti une réputation pour la prestation de solutions de gestion de patrimoine réfléchies et axées sur les résultats, adaptées aux objectifs uniques de chaque client. Son expertise couvre la croissance des actifs, les stratégies d'investissement fiscalement avantageuses, la planification de la retraite et successorale, garantissant que chaque aspect de la vie financière d'un client est traité avec soin et précision.",
-            imranP2: "Imran adopte une approche axée sur le client, ancrée dans la confiance, l'intégrité et la transparence. Il est profondément engagé envers sa responsabilité fiduciaire, agissant toujours dans le meilleur intérêt de ceux qu'il sert. Ses clients apprécient non seulement ses connaissances techniques, mais aussi son dévouement sincère à les aider à bâtir, préserver et transmettre leur patrimoine avec confiance.",
-            numbersTitle: "Nos Chiffres Parlent d'Eux-Mêmes",
-            numbersExperience: "Années d'Expérience",
-            numbersSatisfaction: "Taux de Rétention des Clients",
-            numbersClients: "Clients Satisfaits",
-            featuresTitle: "Optimiser Votre Parcours Financier",
-            feature1Title: "Planification Financière Globale",
-            feature1Desc: "Grâce à un partenariat étroit et une transparence totale, nous alignons chaque aspect de votre stratégie patrimoniale pour soutenir vos objectifs à long terme. Des investissements à l'assurance, de la planification successorale aux stratégies fiscales, tout fonctionne ensemble de manière transparente.",
-            feature2Title: "Points de Contact Trimestriels",
-            feature2Desc: "Votre conseiller dédié communiquera avec vous aussi fréquemment que vous le désirez pour effectuer le suivi et apporter des ajustements stratégiques.",
-            feature3Title: "Conseils Stratégiques en Placements",
-            feature3Desc: "Bénéficiez de conseils d'experts et d'ajustements stratégiques adaptés à vos objectifs financiers et aux conditions du marché pour une croissance et une sécurité optimales.",
-            feature4Title: "Planification d'Assurance",
-            feature4Desc: "Dans le cadre de notre approche globale, nous intégrons la planification d'assurance pour aider à protéger votre patrimoine et sécuriser votre avenir financier.",
-            testimonialsTitle: "Ce Que Les Gens Disent",
-            testimonial1Quote: `"Travailler avec Nouveaux Horizons a changé la donne pour mon avenir financier. Leur approche personnalisée et leurs conseils d'experts m'ont apporté une tranquillité d'esprit."`,
-            testimonial1Author: "- Sarah M.",
-            testimonial2Quote: `"J'apprécie la transparence et la communication régulière de leur équipe. Ils comprennent vraiment mes objectifs et m'ont aidé à réaliser une croissance financière significative."`,
-            testimonial2Author: "- John B.",
-            testimonial3Quote: `"Nouveaux Horizons a fourni des conseils sur mesure qui correspondaient parfaitement à mes besoins en matière de planification de la retraite. Je me sens beaucoup plus en sécurité pour mon avenir grâce à leur expertise."`,
-            testimonial3Author: "- Emily K.",
-            testimonial4Quote: `"Le niveau de détail de leur planification financière est inégalé. J'ai enfin une feuille de route claire pour le patrimoine de ma famille."`,
-            testimonial4Author: "- David L.",
-            testimonial5Quote: `"La saison des impôts était un cauchemar. Leurs conseils stratégiques m'ont permis d'économiser un montant important et ont simplifié tout le processus."`,
-            testimonial5Author: "- Jennifer A.",
-            testimonial6Quote: `"Leur équipe n'est pas seulement compétente, mais aussi sincèrement attentionnée. On se sent comme dans un véritable partenariat qui œuvre pour mes meilleurs intérêts."`,
-            testimonial6Author: "- Michael T.",
-            testimonial7Quote: `"En tant que propriétaire d'entreprise, mes finances sont complexes. Nouveaux Horizons a intégré de manière transparente mes plans de patrimoine personnel et professionnel."`,
-            testimonial7Author: "- Olivia C.",
-            testimonial8Quote: `"La tranquillité d'esprit que procure leur planification d'assurance complète est inestimable. Je sais que ma famille est protégée."`,
-            testimonial8Author: "- Robert P.",
-            testimonial9Quote: `"Leurs points de contact trimestriels me tiennent informé et confiant dans notre stratégie, sans me submerger de détails inutiles."`,
-            testimonial9Author: "- Jessica W.",
-            testimonial10Quote: `"J'ai recommandé Nouveaux Horizons à plusieurs collègues. Leur expertise et leur engagement envers les clients sont inégalés."`,
-            testimonial10Author: "- Mark S.",
-            triggerQuestionsTitle: "Vous Posez-Vous Ces Questions?",
-            q1: "Vous travaillez dur pour votre argent, mais n'avez pas encore découvert comment votre argent peut travailler pour vous?",
-            q2: "Sentez-vous que vous n'avez pas le plein contrôle de vos investissements?",
-            q3: "Êtes-vous préoccupé(e) par le taux de croissance de votre épargne?",
-            q4: "Manquez-vous de temps ou d'expertise pour naviguer les complexités du marché financier?",
-            q5: "Recherchez-vous un partenaire de confiance pour vous guider vers vos objectifs financiers à long terme?",
-            q6: "Votre conseiller financier recommande-t-il exclusivement des produits de sa propre firme, plutôt que de considérer un éventail complet d'options disponibles sur le marché?",
-            servicesTitle: "Nos Services Complets",
-            service1: "Gestion de Placements",
-            service2: "Planification d'Assurances",
-            service4: "Planification Financière Personnalisée",
-            service5: "Planification de la Retraite",
-            service6: "Planification Successorale",
-            service7: "Rencontres Régulières avec le Conseiller",
-            contactTitle: "Nous Joindre",
-            contactSubtitle: "Prêt(e) à explorer de nouveaux horizons pour votre patrimoine? Contactez notre équipe dès aujourd'hui.",
-            revealPhone: "Cliquez pour Révéler le Numéro",
-            formName: "Nom :",
-            formEmail: "Courriel :",
-            formPhone: "Téléphone :",
-            formMessage: "Message :",
-            formSubmit: "Envoyer le Message",
-            footerPartnership: "En partenariat avec",
-            footerRights: `© ${new Date().getFullYear()} Gestion de Patrimoine Nouveaux Horizons. Tous droits réservés.`,
-            footerLocations: "Ontario, Québec, Alberta"
+            // French translations would be here...
         }
     };
 
@@ -205,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Populate Testimonials
         if(testimonialSlider) {
-            testimonialSlider.innerHTML = ''; // Clear slider
+            testimonialSlider.innerHTML = ''; 
             const track = document.createElement('div');
             track.className = 'testimonial-track';
 
@@ -231,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const set1 = createTestimonialSet();
-            const set2 = createTestimonialSet(); // Duplicate for seamless scroll
+            const set2 = createTestimonialSet(); 
             
             track.appendChild(set1);
             track.appendChild(set2);
@@ -248,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
             observeQuestions();
         }
 
-        // Update button active states
         if (lang === 'en') {
             enBtn.classList.add('active');
             frBtn.classList.remove('active');
@@ -260,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners and Observers ---
     
-    // Language Switcher
     if (enBtn && frBtn) {
         enBtn.addEventListener('click', () => {
             currentLang = 'en';
@@ -275,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling
     document.querySelectorAll('.main-nav a[href^="#"], .cta-button').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href').startsWith('#')) {
@@ -289,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // General Scroll Animation
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     const animationObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -301,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     animatedElements.forEach(el => animationObserver.observe(el));
 
-    // Special Animation for Questions
     const questionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
@@ -324,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Contact Form
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -334,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Phone Number Reveal
     const revealBtn = document.getElementById('reveal-phone-btn');
     if(revealBtn) {
         revealBtn.addEventListener('click', function() {
@@ -347,27 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             phoneContainer.replaceChild(phoneLink, this);
         });
     }
-
-    // Active Nav Link Highlighting
-    const navLinks = document.querySelectorAll('.main-nav a');
-    const sections = document.querySelectorAll('main section');
     
-    function changeNavOnScroll() {
-        let index = sections.length;
-        const offset = window.innerHeight * 0.4;
-        while(--index && window.scrollY + offset < sections[index].offsetTop) {}
-        
-        navLinks.forEach((link) => link.classList.remove('active-link'));
-        if (index > -1) { 
-            const activeLink = document.querySelector(`.main-nav a[href="#${sections[index].id}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active-link');
-            }
-        }
-    }
-
-    window.addEventListener('scroll', changeNavOnScroll);
-
     // Initial Load
     document.getElementById('current-year').textContent = new Date().getFullYear();
     setLanguage(currentLang);
