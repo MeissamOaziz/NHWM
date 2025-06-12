@@ -349,16 +349,16 @@ section {
 /* --- Testimonials Section --- */
 .testimonial-slider {
     display: flex;
-    gap: 30px;
-    padding-bottom: 20px;
-    overflow-x: hidden; /* Hide scrollbar, animation will handle movement */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 .testimonial-track {
     display: flex;
     gap: 30px;
-    animation: scroll 60s linear infinite;
+    animation: scroll 80s linear infinite;
 }
 .testimonial-slider:hover .testimonial-track {
     animation-play-state: paused;
@@ -372,7 +372,7 @@ section {
     padding: 35px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    flex: 0 0 30%;
+    flex: 0 0 calc(33.333% - 20px);
     min-width: 300px;
     text-align: center;
 }
@@ -415,7 +415,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
 }
-.services-section .service-list .service-item {
+.services-section .service-item {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 30px 25px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -425,7 +425,7 @@ section {
     text-align: center;
     font-weight: 600;
 }
-.services-section .service-list .service-item:hover {
+.services-section .service-item:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -528,6 +528,12 @@ section {
     .hero-section { background-attachment: scroll; }
     .features-image-container { display: none; }
     .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-slider {
+        scroll-snap-type: none;
+    }
+    .testimonial {
+        flex-basis: 45%; /* Show ~2 items on tablet */
+    }
 }
 
 @media (max-width: 768px) {
@@ -542,4 +548,5 @@ section {
         overflow-x: hidden;
     }
     .testimonial { flex-basis: auto; }
+    .numbers-grid { grid-template-columns: 1fr; }
 }
