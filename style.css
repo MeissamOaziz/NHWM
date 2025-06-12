@@ -301,7 +301,7 @@ section {
 }
 
 /* --- Features Section --- */
-.features-section h2 {
+#features h2 {
     text-align: center;
     width: 100%;
     margin-bottom: 50px;
@@ -350,9 +350,22 @@ section {
 .testimonial-slider {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
     padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
+    overflow-x: hidden; /* Hide scrollbar, animation will handle movement */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.testimonial-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll 60s linear infinite;
+}
+.testimonial-slider:hover .testimonial-track {
+    animation-play-state: paused;
+}
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 .testimonial {
     background: var(--bg-light);
@@ -362,7 +375,6 @@ section {
     flex: 0 0 30%;
     min-width: 300px;
     text-align: center;
-    scroll-snap-align: start;
 }
 .testimonial .quote {
     font-style: italic;
@@ -516,9 +528,6 @@ section {
     .hero-section { background-attachment: scroll; }
     .features-image-container { display: none; }
     .feature-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonial-slider {
-        scroll-snap-type: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -532,4 +541,5 @@ section {
         flex-direction: column;
         overflow-x: hidden;
     }
+    .testimonial { flex-basis: auto; }
 }
