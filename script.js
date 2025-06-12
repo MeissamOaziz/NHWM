@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imranName: "Imran Mastan",
             imranP1: "With over a decade of experience in the financial industry, Imran has built a reputation for delivering thoughtful, results-driven wealth management solutions tailored to each client's unique goals. His expertise spans asset growth, tax-efficient investment strategies, retirement and estate planning—ensuring that every aspect of a client’s financial life is handled with care and precision.",
             imranP2: "Imran takes a client-first approach rooted in trust, integrity, and transparency. He is deeply committed to his fiduciary responsibility, always acting in the best interest of those he serves. His clients value not only his technical knowledge but also his genuine dedication to helping them build, preserve, and transition their wealth with confidence.",
-            imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
             numbersSatisfaction: "Client Retention Rate",
@@ -102,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imranName: "Imran Mastan",
             imranP1: "Avec plus d'une décennie d'expérience dans le secteur financier, Imran s'est bâti une réputation pour la prestation de solutions de gestion de patrimoine réfléchies et axées sur les résultats, adaptées aux objectifs uniques de chaque client. Son expertise couvre la croissance des actifs, les stratégies d'investissement fiscalement avantageuses, la planification de la retraite et successorale, garantissant que chaque aspect de la vie financière d'un client est traité avec soin et précision.",
             imranP2: "Imran adopte une approche axée sur le client, ancrée dans la confiance, l'intégrité et la transparence. Il est profondément engagé envers sa responsabilité fiduciaire, agissant toujours dans le meilleur intérêt de ceux qu'il sert. Ses clients apprécient non seulement ses connaissances techniques, mais aussi son dévouement sincère à les aider à bâtir, préserver et transmettre leur patrimoine avec confiance.",
-            imranP3: "Qu'il s'agisse de faire croître votre portefeuille, de minimiser vos obligations fiscales ou de veiller à ce que votre plan successoral reflète votre héritage, Imran travaille avec diligence pour simplifier la complexité et offrir la tranquillité d'esprit, afin que vous puissiez vous concentrer sur ce qui compte le plus.",
             numbersTitle: "Nos Chiffres Parlent d'Eux-Mêmes",
             numbersExperience: "Années d'Expérience",
             numbersSatisfaction: "Taux de Rétention des Clients",
@@ -169,8 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const enBtn = document.getElementById('en-btn');
     const frBtn = document.getElementById('fr-btn');
     let currentLang = localStorage.getItem('language') || 'en';
-    const questionsContainer = document.getElementById('questions-container');
     const logoImg = document.getElementById('logo-img');
+    const questionsContainer = document.getElementById('questions-container');
+    const testimonialSlider = document.getElementById('testimonial-slider');
 
     function applyTranslations(lang) {
         document.documentElement.lang = lang;
@@ -188,7 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logoImg && translations[lang] && translations[lang].logoSrc) {
             logoImg.src = translations[lang].logoSrc;
         }
-
+    }
+    
+    function populateDynamicContent(lang) {
+        // Populate Questions
         if(questionsContainer) {
             questionsContainer.innerHTML = ''; 
             for (let i = 1; i <= 6; i++) {
@@ -199,9 +201,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 questionsContainer.appendChild(p);
             }
         }
+        
+        // Populate Testimonials
+        if(testimonialSlider) {
+            testimonialSlider.innerHTML = ''; // Clear slider
+            const track = document.createElement('div');
+            track.className = 'testimonial-track';
+
+            const createTestimonialSet = () => {
+                const fragment = document.createDocumentFragment();
+                for(let i=1; i<=10; i++) {
+                    const testimonialDiv = document.createElement('div');
+                    testimonialDiv.className = 'testimonial';
+                    
+                    const quote = document.createElement('p');
+                    quote.className = 'quote';
+                    quote.textContent = translations[lang][`testimonial${i}Quote`] || '';
+                    
+                    const author = document.createElement('p');
+                    author.className = 'author';
+                    author.textContent = translations[lang][`testimonial${i}Author`] || '';
+
+                    testimonialDiv.appendChild(quote);
+                    testimonialDiv.appendChild(author);
+                    fragment.appendChild(testimonialDiv);
+                }
+                return fragment;
+            }
+
+            const set1 = createTestimonialSet();
+            const set2 = createTestimonialSet(); // Duplicate for seamless scroll
+            
+            track.appendChild(set1);
+            track.appendChild(set2);
+            testimonialSlider.appendChild(track);
+        }
     }
-    
-    // --- Event Listeners and Initializers ---
+
+    function setLanguage(lang) {
+        applyTranslations(lang);
+        populateDynamicContent(lang);
+        
+        // Re-observe question container for animation
+        if(questionsContainer) {
+            questionObserver.disconnect();
+            questionObserver.observe(questionsContainer);
+        }
+
+        // Update button active states
+        if (lang === 'en') {
+            enBtn.classList.add('active');
+            frBtn.classList.remove('active');
+        } else {
+            frBtn.classList.add('active');
+            enBtn.classList.remove('active');
+        }
+    }
+
+    // --- Event Listeners and Observers ---
     
     // Language Switcher
     if (enBtn && frBtn) {
@@ -260,21 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.2 });
-
-    function observeQuestions() {
-        if(questionsContainer) {
-            questionObserver.observe(questionsContainer);
-        }
-    }
-    
-    function setLanguage(lang) {
-        applyTranslations(lang);
-        if (questionsContainer) {
-            questionObserver.disconnect();
-            observeQuestions();
-        }
-        changeNavOnScroll();
-    }
     
     // Contact Form
     const contactForm = document.getElementById('contact-form');
