@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imranName: "Imran Mastan",
             imranP1: "With over a decade of experience in the financial industry, Imran has built a reputation for delivering thoughtful, results-driven wealth management solutions tailored to each client's unique goals. His expertise spans asset growth, tax-efficient investment strategies, retirement and estate planning—ensuring that every aspect of a client’s financial life is handled with care and precision.",
             imranP2: "Imran takes a client-first approach rooted in trust, integrity, and transparency. He is deeply committed to his fiduciary responsibility, always acting in the best interest of those he serves. His clients value not only his technical knowledge but also his genuine dedication to helping them build, preserve, and transition their wealth with confidence.",
+            imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
             numbersSatisfaction: "Client Retention Rate",
@@ -171,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionsContainer = document.getElementById('questions-container');
     const testimonialSlider = document.getElementById('testimonial-slider');
 
-    function applyTranslations(lang) {
+    function applyStaticTranslations(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.dataset.translateKey;
@@ -237,15 +238,14 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonialSlider.appendChild(track);
         }
     }
-
+    
     function setLanguage(lang) {
-        applyTranslations(lang);
+        applyStaticTranslations(lang);
         populateDynamicContent(lang);
         
-        // Re-observe question container for animation
         if(questionsContainer) {
             questionObserver.disconnect();
-            questionObserver.observe(questionsContainer);
+            observeQuestions();
         }
 
         // Update button active states
@@ -317,6 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.2 });
+
+    function observeQuestions() {
+        if(questionsContainer) {
+            questionObserver.observe(questionsContainer);
+        }
+    }
     
     // Contact Form
     const contactForm = document.getElementById('contact-form');
