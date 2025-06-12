@@ -81,13 +81,13 @@ p {
 }
 
 .main-nav li {
-    margin-left: 8px; /* Reduced margin */
+    margin-left: 8px;
 }
 
 .main-nav a {
     display: block;
     font-weight: 600;
-    font-size: 0.85rem; /* Reduced font size */
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding: 6px 12px;
@@ -95,7 +95,7 @@ p {
     color: var(--primary-dark-blue);
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
 }
 
 .main-nav a:hover, .main-nav a.active-link {
@@ -114,7 +114,7 @@ p {
 }
 
 .language-switch { 
-    margin-left: 8px; /* Reduced margin */
+    margin-left: 8px;
     display: flex;
 }
 .lang-btn {
@@ -205,19 +205,13 @@ section {
     padding: 100px 0;
 }
 
-#about, #features, #contact {
-    background-color: var(--bg-light);
-}
-
-#our-numbers, #testimonials {
-    background-color: var(--alt-bg-color); 
-}
-
-#trigger-questions, #services {
+.bg-light { background-color: var(--bg-light); }
+.bg-alt { background-color: var(--alt-bg-color); }
+.bg-dark {
     background-color: var(--primary-dark-blue);
     color: var(--text-light);
 }
-#trigger-questions h2, #services h2 {
+.bg-dark h2 {
     color: var(--text-light);
 }
 
@@ -232,7 +226,7 @@ section {
     transform: translateY(0);
 }
 
-/* --- About Section --- */
+/* --- About & Team Sections --- */
 .about-content {
     display: flex;
     gap: 40px;
@@ -249,15 +243,16 @@ section {
     width: 100%;
 }
 
-.team-section {
-    margin-top: 80px;
-    padding-top: 60px;
-    border-top: 1px solid var(--border-color);
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
 }
 .team-member-profile {
     display: flex;
     align-items: center;
     gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
 }
 .team-member-photo {
     width: auto;
@@ -277,7 +272,7 @@ section {
 .our-numbers-section h2 { color: var(--primary-dark-blue); }
 .numbers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
@@ -306,15 +301,15 @@ section {
 }
 
 /* --- Features Section --- */
-#features .features-layout {
-    display: flex;
-    align-items: stretch;
-    gap: 50px;
-}
-#features h2 {
+.features-section h2 {
     text-align: center;
     width: 100%;
     margin-bottom: 50px;
+}
+.features-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 50px;
 }
 .features-content {
     flex: 2;
@@ -456,7 +451,6 @@ section {
     font-weight: bold;
     color: var(--primary-dark-blue);
 }
-
 .form-group { margin-bottom: 25px; }
 .form-group label {
     display: block;
@@ -516,7 +510,7 @@ section {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .about-content, #features .features-layout, .testimonial-slider { 
+    .about-content, #features .features-layout, .team-member-profile { 
         flex-direction: column; 
     }
     .hero-section { background-attachment: scroll; }
@@ -534,7 +528,6 @@ section {
     .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 5px; }
     .main-nav li { margin: 0; }
     .feature-grid { grid-template-columns: 1fr; }
-    .team-member-profile { flex-direction: column; }
     .testimonial-slider {
         flex-direction: column;
         overflow-x: hidden;
