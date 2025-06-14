@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imranName: "Imran Mastan",
             imranP1: "With over a decade of experience in the financial industry, Imran has built a reputation for delivering thoughtful, results-driven wealth management solutions tailored to each client's unique goals. His expertise spans asset growth, tax-efficient investment strategies, retirement and estate planning—ensuring that every aspect of a client’s financial life is handled with care and precision.",
             imranP2: "Imran takes a client-first approach rooted in trust, integrity, and transparency. He is deeply committed to his responsibility, always acting in the best interest of those he serves. His clients value not only his technical knowledge but also his genuine dedication to helping them build, preserve, and transition their wealth with confidence.",
-            imranP3: "Whether it's growing your portfolio, minimizing your tax liabilities, or ensuring your estate plan reflects your legacy, Imran works diligently to simplify complexity and provide peace of mind—so you can focus on what matters most.",
             numbersTitle: "Our Numbers Speak Volumes",
             numbersExperience: "Years of Experience",
             numbersSatisfaction: "Client Retention Rate",
@@ -82,16 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
             legalLink: "Legal",
             privacyLink: "Privacy Policy",
             ciroLink: "Know Your Advisor",
-            disclaimer1: "Imran Mastan is a representative of Designed Securities Ltd., and is also licensed for the sale of insurance. Imran Mastan is registered through separate organizations for each purpose and as such, you may be dealing with more than one entity depending on the services and products discussed. The name of the entity being represented should correspond to the business being conducted. Imran Mastan and New Horizons Wealth Management of Designed Securities Ltd. are separate legal entities.",
-            disclaimer2: "Designed Securities Ltd. is regulated by the Canadian Investment Regulatory Organization (Canadian Investment Regulatory Organization (ciro.ca) and is a Member of the Canadian Investor Protection Fund (www.cipf.ca). Investment products are provided by Designed Securities Ltd. and include, but are not limited to, mutual funds, stocks, and bonds. Imran Mastan is registered to provide advice and solutions to clients residing in the province of Quebec and Ontario.",
-            disclaimer3: "Any advice which may be given in respect of non-securities services is given by Imran Mastan solely and no such advice is given in their capacity as a registrant of Designed Securities Ltd. Canadian Investor Protection Fund (CIPF) coverage is available to CIRO Dealer Members and does not offer protection, within limits, on non-securities products not held by a Member. Non-securities related business includes, without limitation, fee-based financial planning services; estate and tax planning; tax return preparation services; advising in or selling any type of insurance product. Accordingly, Designed Securities Ltd. is not providing and does not supervise any of the above noted activities and you should not rely on Designed Securities Ltd. for any review of any non-securities services provided by Imran Mastan.",
-            disclaimer4: "For insurance products, the registrant operates under the name Imran Mastan and is licensed by the Autorité des Marchés Financiers. Imran Mastan is authorized to provide insurance-related advice exclusively in the province of Quebec.",
-            disclaimer5: "The Client Retention from our “numbers speak volumes” means clients who have done business with us and wanted to stay with us. Satisfied clients means clients who have been satisfied with the advice and services given to them at that period of time.",
-            disclaimer6: "No information on this website shall be deemed as investment advice or a recommendation. The information provided may be gathered from sources believed to be accurate. This website is for informational and reference purposes only and is not intended to provide specific personalized advice including, without limitation, investment, financial, legal, accounting or tax advice. Please consult the appropriate professional depending on your particular circumstances. This website does not constitute an offer or solicitation in any jurisdiction in which such offer or solicitation is not authorized or to any person to whom it is unlawful to make such offer or solicitation.",
-            disclaimer7: "By accessing links to external websites, you will be leaving this website, and Imran Mastan and New Horizons Wealth Management of Designed Securities Ltd. are not responsible for the information contained on these external websites. Content may not be reproduced or distributed without the consent of Imran Mastan.",
+            disclaimersLink: "Disclaimers",
             footerPartnership: "In partnership with",
             footerRights: `© ${new Date().getFullYear()} New Horizons Wealth Management. All rights reserved.`,
-            footerLocations: "Ontario, Québec, Alberta" 
+            footerLocations: "Ontario, Québec" 
         },
         fr: {
             pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
@@ -103,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Nous Joindre",
             navLogin: "Connexion Client",
             logoSrc: "Nouveaux Horizons - Logo - RGB.png",
-            heroTitle: "Vos Buts. Votre Avenir.<br>Notre Expertise.",
+            heroTitle: "Vos objectifs. Votre avenir.<br>Notre expertise.",
             heroTagline: "Naviguez votre parcours financier avec confiance.",
             heroCTA: "Planifier une Consultation",
             aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
@@ -173,16 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
             legalLink: "Légal",
             privacyLink: "Confidentialité",
             ciroLink: "Connaître son conseiller",
-            disclaimer1: "Imran Mastan est un représentant de Designed Securities Ltée et détient également des licences pour la vente de produits. Imran Mastan est inscrit auprès d’organismes distincts pour chacun de ces services. Ainsi, selon les produits et services abordés, vous pourriez être en relation avec plus d’une entité. Le nom de l’entité représentée devrait correspondre à l’activité exercée. Imran Mastan et Gestion de Patrimoine Nouveaux Horizons de Designed Securities Ltée sont des entités juridiques distinctes.",
-            disclaimer2: "Designed Securities Ltée est réglementée par l’Organisme canadien de réglementation des investissements (Organisme canadien de réglementation des investissements – ciro.ca) et est membre du Fonds canadien de protection des épargnants (www.fcpe.ca). Les produits de placement sont offerts par Designed Securities Ltée et comprennent, sans s’y limiter, des fonds communs de placement, des actions et des obligations. Imran Mastan est autorisé à fournir des conseils et des solutions aux clients résidant dans les provinces du Québec et de l’Ontario.",
-            disclaimer3: "Tout conseil donné relativement à des services non liés aux valeurs mobilières l’est uniquement par Imran Mastan, et non à titre de représentant de Designed Securities Ltée. La protection offerte par le Fonds canadien de protection des épargnants (FCPE) s’applique uniquement aux membres de l’OCRI et ne couvre pas, même de manière limitée, les produits non liés aux valeurs mobilières qui ne sont pas détenus par un membre. Les activités non liées aux valeurs mobilières incluent, sans s’y limiter, les services de planification financière à honoraires; la planification successorale et fiscale; la préparation de déclarations de revenus; les conseils ou la vente de tout produit d’assurance. Par conséquent, Designed Securities Ltée n’offre ni ne supervise aucune des activités mentionnées ci-dessus, et vous ne devez pas compter sur Designed Securities Ltée pour la révision de tout service non lié aux valeurs mobilières fourni par Imran Mastan.",
-            disclaimer4: "Pour les produits d’assurance, le représentant exerce sous le nom d’Imran Mastan et détient un permis délivré par l’Autorité des Marchés Financiers. Imran Mastan est autorisé à offrir des conseils en assurance exclusivement dans la province de Québec.",
-            disclaimer5: "Le taux de rétention des clients de nos « chiffres parlent d'eux-mêmes » signifie les clients qui ont fait affaire avec nous et ont souhaité rester avec nous. Les clients satisfaits sont ceux qui ont été satisfaits des conseils et des services qui leur ont été fournis à cette période.",
-            disclaimer6: "Aucune information figurant sur ce site Web ne doit être interprétée comme un conseil en placement ou une recommandation. Les informations fournies peuvent provenir de sources jugées fiables. Ce site Web est destiné uniquement à des fins informatives et de référence et n’a pas pour objectif de fournir des conseils personnalisés, y compris, sans s’y limiter, des conseils en matière de placements, de finances, de droit, de comptabilité ou de fiscalité. Veuillez consulter le professionnel approprié selon votre situation particulière. Ce site ne constitue pas une offre ni une sollicitation dans une juridiction où une telle offre ou sollicitation n’est pas autorisée ou à l’égard de toute personne à qui il serait illégal de faire une telle offre ou sollicitation.",
-            disclaimer7: "En accédant à des liens vers des sites Web externes, vous quittez ce site Web, et ni Imran Mastan ni Gestion de Patrimoine Nouveaux Horizons de Designed Securities Ltée ne sont responsables des informations contenues sur ces sites externes. Le contenu ne peut être reproduit ni distribué sans le consentement d’Imran Mastan.",
+            disclaimersLink: "Avis de non-responsabilité",
             footerPartnership: "En partenariat avec",
             footerRights: `© ${new Date().getFullYear()} Gestion de Patrimoine Nouveaux Horizons. Tous droits réservés.`,
-            footerLocations: "Ontario, Québec, Alberta"
+            footerLocations: "Ontario, Québec"
         }
     };
 
@@ -213,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function populateDynamicContent(lang) {
+        // Populate Questions
         if(questionsContainer) {
             questionsContainer.innerHTML = ''; 
             for (let i = 1; i <= 6; i++) {
@@ -224,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
+        // Populate Testimonials
         if(testimonialSlider) {
             testimonialSlider.innerHTML = ''; 
             const track = document.createElement('div');
