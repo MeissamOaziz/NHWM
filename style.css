@@ -510,7 +510,7 @@ section {
     gap: 20px;
 }
 .footer-nh-logo { height: 50px; }
-.footer-partner-logo { height: 50px; /* Enlarged by ~10% */ }
+.footer-partner-logo { height: 50px; }
 .footer-regulatory-logo { margin-top: 20px; }
 .footer-ciro-logo { 
     height: 25px;
@@ -608,4 +608,13 @@ section {
     }
     .testimonial { flex-basis: auto; }
     .numbers-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Temporary Hide for Testimonials --- */
+/* To show the testimonials, delete or comment out these two rules */
+#testimonials {
+    display: none;
+}
+.nav-testimonials {
+    display: none;
 }
