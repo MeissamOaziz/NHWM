@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
-            pageTitle: "New Horizons Wealth Management",
+            pageTitle: "New Horizons | Wealth Management & Financial Advisor in Montreal",
+            metaDescription: "New Horizons offers expert wealth management, retirement planning, and personalized financial advisor services in Montreal, Quebec, and Ontario. Achieve your financial goals with our trusted team.",
             navAbout: "About Us",
             navServices: "Services",
             navFeatures: "Features",
@@ -14,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle: "Your Goals. Your Future.<br>Our Expertise.",
             heroTagline: "Navigate your financial journey with confidence.",
             heroCTA: "Schedule a Consultation",
-            aboutTitle: "About New Horizons Wealth Management",
-            aboutIntro: "At New Horizons Wealth Management, we move beyond standard solutions to offer wealth management that's precisely tailored to your individual aspirations. Whether you're envisioning a comfortable retirement, strategic investment growth, or a secure financial legacy, our approach is rooted in creating personalized strategies that resonate with your values and long-term objectives.",
+            aboutTitle: "Your Trusted Montreal Wealth Management Firm",
+            aboutIntro: "At New Horizons Wealth Management, we move beyond standard solutions to offer wealth management in Montreal that's precisely tailored to your individual aspirations. Whether you're envisioning a comfortable retirement, strategic investment growth, or a secure financial legacy, our approach as dedicated financial advisors is rooted in creating personalized strategies that resonate with your values and long-term objectives in Quebec and Ontario.",
             aboutP2: "With a foundation built on extensive experience and a steadfast commitment to transparency, our dedicated team empowers you to navigate your financial future with confidence and clarity. We believe in fostering strong, collaborative relationships, providing clear advice supported by real-time access to your investment portfolio. Let New Horizons Wealth Management be your trusted partner in simplifying the complexities of today’s financial markets.",
             teamSectionTitle: "Our Team",
             imranName: "Imran Mastan",
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             numbersExperience: "Years of Experience",
             numbersSatisfaction: "Client Retention Rate",
             numbersClients: "Satisfied Clients",
-            featuresTitle: "Empowering Your Financial Journey",
+            featuresTitle: "Our Approach to Financial Planning",
             feature1Title: "Holistic Financial Planning",
             feature1Desc: "Through close partnership and full transparency, we align every aspect of your wealth strategy to support your long-term goals. From investments to insurance, estate planning to tax strategies, everything works together seamlessly.",
             feature2Title: "Quarterly Touchpoints",
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feature3Desc: "Benefit from expert advice and strategic changes tailored to your financial goals and market conditions for optimal growth and security.",
             feature4Title: "Insurance Planning",
             feature4Desc: "As part of our holistic approach, we incorporate insurance planning to help protect your wealth and secure your financial future.",
-            testimonialsTitle: "What People Say",
+            testimonialsTitle: "What Our Clients Say",
             testimonial1Quote: `"Working with New Horizons has been a game-changer for my financial future. Their personalized approach and expert guidance have given me peace of mind."`,
             testimonial1Author: "- Sarah M.",
             testimonial2Quote: `"I appreciate the transparency and regular communication from their team. They truly understand my goals and have helped me achieve significant financial growth."`,
@@ -69,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
             service5: "Retirement Planning",
             service6: "Estate Planning",
             service7: "Regular Advisor Check-ins",
-            contactTitle: "Contact Us",
-            contactSubtitle: "Ready to explore new horizons for your wealth? Get in touch with our team today.",
+            contactTitle: "Contact Your Financial Advisor",
+            contactSubtitle: "Ready to speak with a financial advisor in Montreal? Get in touch with our team today.",
             revealPhone: "Click to Reveal Phone Number",
             formName: "Name:",
             formEmail: "Email:",
@@ -87,7 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLocations: "Ontario, Québec" 
         },
         fr: {
-            pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
+            pageTitle: "Nouveaux Horizons | Gestion de Patrimoine & Conseiller Financier à Montréal",
+            metaDescription: "Nouveaux Horizons offre des services experts en gestion de patrimoine, planification de la retraite et des conseils financiers personnalisés à Montréal, Québec et en Ontario. Atteignez vos objectifs financiers avec notre équipe de confiance.",
             navAbout: "À Propos",
             navServices: "Services",
             navFeatures: "Nos Atouts",
@@ -99,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle: "Vos objectifs. Votre avenir.<br>Notre expertise.",
             heroTagline: "Naviguez votre parcours financier avec confiance.",
             heroCTA: "Planifier une Consultation",
-            aboutTitle: "À Propos de Gestion de Patrimoine Nouveaux Horizons",
-            aboutIntro: "Chez Gestion de Patrimoine Nouveaux Horizons, nous allons au-delà des solutions standards pour offrir une gestion de patrimoine précisément adaptée à vos aspirations individuelles. Que vous envisagiez une retraite confortable, une croissance stratégique de vos investissements ou un héritage financier sécurisé, notre approche est ancrée dans la création de stratégies personnalisées qui résonnent avec vos valeurs et vos objectifs à long terme.",
+            aboutTitle: "Votre Firme de Confiance en Gestion de Patrimoine à Montréal",
+            aboutIntro: "Chez Gestion de Patrimoine Nouveaux Horizons, nous allons au-delà des solutions standards pour offrir une gestion de patrimoine à Montréal précisément adaptée à vos aspirations individuelles. Que vous envisagiez une retraite confortable, une croissance stratégique de vos investissements ou un héritage financier sécurisé, notre approche en tant que conseillers financiers dévoués est ancrée dans la création de stratégies personnalisées qui résonnent avec vos valeurs et vos objectifs à long terme au Québec et en Ontario.",
             aboutP2: "Fondée sur une vaste expérience et un engagement inébranlable envers la transparence, notre équipe dévouée vous donne les moyens de naviguer votre avenir financier avec confiance et clarté. Nous croyons en la promotion de relations solides et collaboratives, en fournissant des conseils clairs soutenus par un accès en temps réel à votre portefeuille d'investissement. Laissez Gestion de Patrimoine Nouveaux Horizons être votre partenaire de confiance pour simplifier les complexités des marchés financiers d'aujourd'hui.",
             teamSectionTitle: "Notre Équipe",
             imranName: "Imran Mastan",
@@ -110,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             numbersExperience: "Années d'Expérience",
             numbersSatisfaction: "Taux de Rétention des Clients",
             numbersClients: "Clients Satisfaits",
-            featuresTitle: "Optimiser Votre Parcours Financier",
+            featuresTitle: "Notre Approche à la Planification Financière",
             feature1Title: "Planification Financière Globale",
             feature1Desc: "Grâce à un partenariat étroit et une transparence totale, nous alignons chaque aspect de votre stratégie patrimoniale pour soutenir vos objectifs à long terme. Des investissements à l'assurance, de la planification successorale aux stratégies fiscales, tout fonctionne ensemble de manière transparente.",
             feature2Title: "Points de Contact Trimestriels",
@@ -154,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
             service5: "Planification de la Retraite",
             service6: "Planification Successorale",
             service7: "Rencontres Régulières avec le Conseiller",
-            contactTitle: "Nous Joindre",
-            contactSubtitle: "Prêt(e) à explorer de nouveaux horizons pour votre patrimoine? Contactez notre équipe dès aujourd'hui.",
+            contactTitle: "Contactez Votre Conseiller Financier",
+            contactSubtitle: "Prêt à parler avec un conseiller financier à Montréal? Contactez notre équipe dès aujourd'hui.",
             revealPhone: "Cliquez pour Révéler le Numéro",
             formName: "Nom :",
             formEmail: "Courriel :",
@@ -180,11 +182,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoImg = document.getElementById('logo-img');
     const questionsContainer = document.getElementById('questions-container');
     const testimonialSlider = document.getElementById('testimonial-slider');
+    const metaDescriptionTag = document.querySelector('meta[name="description"]');
 
-    function applyStaticTranslations(lang) {
+    function applyTranslations(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.dataset.translateKey;
+            
+            // Handle meta description tag separately
+            if (key === 'metaDescription' && metaDescriptionTag) {
+                metaDescriptionTag.setAttribute('content', translations[lang][key] || '');
+                return; // Skip the rest of the loop for this element
+            }
+
             if (translations[lang] && translations[lang][key]) {
                 if (key === 'heroTitle') {
                     element.innerHTML = translations[lang][key];
@@ -200,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function populateDynamicContent(lang) {
-        // Populate Questions
         if(questionsContainer) {
             questionsContainer.innerHTML = ''; 
             for (let i = 1; i <= 6; i++) {
@@ -212,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Populate Testimonials
         if(testimonialSlider) {
             testimonialSlider.innerHTML = ''; 
             const track = document.createElement('div');
@@ -249,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function setLanguage(lang) {
-        applyStaticTranslations(lang);
+        applyTranslations(lang);
         populateDynamicContent(lang);
         
         if(questionsContainer) {
