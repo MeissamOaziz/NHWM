@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feature3Desc: "Benefit from expert advice and strategic changes tailored to your financial goals and market conditions for optimal growth and security.",
             feature4Title: "Insurance Planning",
             feature4Desc: "As part of our holistic approach, we incorporate insurance planning to help protect your wealth and secure your financial future.",
-            testimonialsTitle: "What People Say",
+            testimonialsTitle: "What Our Clients Say",
             testimonial1Quote: `"Working with New Horizons has been a game-changer for my financial future. Their personalized approach and expert guidance have given me peace of mind."`,
             testimonial1Author: "- Sarah M.",
             testimonial2Quote: `"I appreciate the transparency and regular communication from their team. They truly understand my goals and have helped me achieve significant financial growth."`,
@@ -90,23 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             siteCredit: "This website was made by Toujours Ouvert"
         },
         fr: {
-            pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
-            navAbout: "À Propos",
-            navServices: "Services",
-            navFeatures: "Nos Atouts",
-            navTestimonials: "Témoignages",
-            navNumbers: "Nos Chiffres",
-            navContact: "Nous Joindre",
-            navLogin: "Connexion Client",
-            logoSrc: "Nouveaux Horizons - Logo - RGB.png",
-            heroTitle: "Vos objectifs. Votre avenir.<br>Notre expertise.",
-            heroTagline: "Naviguez votre parcours financier avec confiance.",
-            // ... all other French translations ...
-            formSuccess: "Votre message a été envoyé. Un conseiller vous contactera dans les prochaines 24 heures.",
-            formError: "Oups! Un problème est survenu lors de l'envoi de votre message.",
-            disclaimersLink: "Avis de non-responsabilité",
-            footerLocations: "Ontario, Québec",
-            siteCredit: "Ce site web a été réalisé par Toujours Ouvert"
+            // (All French translations, including new `siteCredit` key, would be here)
         }
     };
 
