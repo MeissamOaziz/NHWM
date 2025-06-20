@@ -167,7 +167,8 @@
                 <div class="contact-info animate-on-scroll">
                     <button id="reveal-phone-btn" data-translate-key="revealPhone">Click to Reveal Phone Number</button>
                 </div>
-                <form id="contact-form" class="animate-on-scroll">
+                
+                <form id="contact-form" class="animate-on-scroll" action="https://formspree.io/f/mjkreoqb" method="POST">
                     <div class="form-group">
                         <label for="name" data-translate-key="formName">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -184,6 +185,7 @@
                         <label for="message" data-translate-key="formMessage">Message:</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
+                    <div id="form-status"></div>
                     <button type="submit" class="submit-btn" data-translate-key="formSubmit">Send Message</button>
                 </form>
             </div>
