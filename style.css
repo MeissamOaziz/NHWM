@@ -263,9 +263,9 @@ section {
     flex-shrink: 0;
 }
 .team-member-profile-text { flex-grow: 1; }
-.team-member-profile-text h2 { text-align: left; }
-.team-member-profile-text h3 { text-align: left; }
-.team-member-profile-text p { text-align: left; }
+.team-member-profile-text h2, .team-member-profile-text h3, .team-member-profile-text p { 
+    text-align: left; 
+}
 
 
 /* --- Our Numbers Section --- */
@@ -561,17 +561,6 @@ section {
 }
 .footer-links a:hover {
     opacity: 1;
-}
-.disclaimer-section {
-    max-width: 800px;
-    margin: 30px auto 0 auto;
-    font-size: 0.75rem;
-    color: #aaa;
-    text-align: left;
-    line-height: 1.6;
-}
-.disclaimer-section p {
-    margin-bottom: 1em;
 }
 .copyright-text, .locations-text {
     margin: 10px 0; 
