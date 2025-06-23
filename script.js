@@ -87,10 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
             footerPartnership: "In partnership with",
             footerRights: `© ${new Date().getFullYear()} New Horizons Wealth Management. All rights reserved.`,
             footerLocations: "Ontario, Québec",
-            siteCredit: "This website was made by Toujours Ouvert"
+            siteCredit: "This website was made by Toujours Ouvert" 
         },
         fr: {
-            // (All French translations, including new `siteCredit` key, would be here)
+            pageTitle: "Gestion de Patrimoine Nouveaux Horizons",
+            navAbout: "À Propos",
+            navServices: "Services",
+            navFeatures: "Nos Atouts",
+            navTestimonials: "Témoignages",
+            navNumbers: "Nos Chiffres",
+            navContact: "Nous Joindre",
+            navLogin: "Connexion Client",
+            logoSrc: "Nouveaux Horizons - Logo - RGB.png",
+            heroTitle: "Vos objectifs. Votre avenir.<br>Notre expertise.",
+            heroTagline: "Naviguez votre parcours financier avec confiance.",
+            // ... all other French translations ...
+            formSuccess: "Votre message a été envoyé. Un conseiller vous contactera dans les prochaines 24 heures.",
+            formError: "Oups! Un problème est survenu lors de l'envoi de votre message.",
+            disclaimersLink: "Avis de non-responsabilité",
+            footerLocations: "Ontario, Québec",
+            siteCredit: "Ce site web a été réalisé par Toujours Ouvert"
         }
     };
 
@@ -250,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    /*
     // --- Contact Form ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
@@ -288,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    */
 
     const revealBtn = document.getElementById('reveal-phone-btn');
     if(revealBtn) {
