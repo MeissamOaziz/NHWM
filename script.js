@@ -250,6 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    /*
+    // --- Contact Form ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
@@ -286,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    */
 
     const revealBtn = document.getElementById('reveal-phone-btn');
     if(revealBtn) {
