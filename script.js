@@ -76,9 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
             formEmail: "Email:",
             formPhone: "Phone:",
             formMessage: "Message:",
+            formCheckboxLabel: "I acknowledge and consent to be contacted regarding my inquiry.",
             formSubmit: "Send Message",
             formSuccess: "Your message has been sent. Our advisor will reach out to you within the next 24 hours.",
             formError: "Oops! There was a problem sending your message.",
+            formConsentError: "Please acknowledge your consent by checking the box.",
             advisorReportBtn: "Know Your Advisor - Investment Advisor Report",
             legalLink: "Legal",
             privacyLink: "Privacy Policy",
@@ -101,9 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
             logoSrc: "Nouveaux Horizons - Logo - RGB.png",
             heroTitle: "Vos objectifs. Votre avenir.<br>Notre expertise.",
             heroTagline: "Naviguez votre parcours financier avec confiance.",
-            // ... all other French translations ...
+            // ... (All other French translations are here) ...
+            formCheckboxLabel: "Je reconnais et consens à être contacté(e) concernant ma demande.",
             formSuccess: "Votre message a été envoyé. Un conseiller vous contactera dans les prochaines 24 heures.",
             formError: "Oups! Un problème est survenu lors de l'envoi de votre message.",
+            formConsentError: "Veuillez confirmer votre consentement en cochant la case.",
             disclaimersLink: "Avis de non-responsabilité",
             footerLocations: "Ontario, Québec",
             siteCredit: "Ce site web a été réalisé par Toujours Ouvert"
@@ -266,13 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // --- Contact Form ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+    const consentCheckbox = document.getElementById('consent-checkbox');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Check if the consent box is checked
+            if (!consentCheckbox.checked) {
+                formStatus.innerHTML = translations[currentLang].formConsentError;
+                formStatus.className = 'form-error';
+                return; // Stop the submission
+            }
+
             const form = e.target;
             const data = new FormData(form);
             
